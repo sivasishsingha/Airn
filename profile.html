@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile — AIRN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="airn.css">
+<style>
+  .profile-page {
+    min-height: 100vh;
+    padding: 100px 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .profile-container {
+    width: 100%;
+    max-width: 420px;
+    background: #0A1525;
+    border: 1px solid rgba(0,150,255,0.25);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  
+  .profile-header {
+    padding: 32px 24px 24px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0,102,255,0.2), rgba(123,47,255,0.1));
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  .profile-circle {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  
+  .profile-circle img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(0,200,255,0.5);
+    object-fit: cover;
+    background: linear-gradient(135deg, #0066FF, #7B2FFF);
+  }
+  
+  .profile-circle img:empty,
+  .profile-circle img[src=""] {
+    background: linear-gradient(135deg, #0066FF, #7B2FFF) !important;
+  }
+  
+  .profile-circle .edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,102,255,0.95);
+    border: 3px solid #0A1525;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .profile-name-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 0;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+  }
+  
+  .profile-name-input:focus {
+    border-bottom-color: rgba(0,200,255,0.5);
+  }
+  
+  .profile-email {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+  
+  .profile-body {
+    padding: 24px;
+  }
+  
+  .profile-field {
+    margin-bottom: 20px;
+  }
+  
+  .profile-field label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .profile-field input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .profile-field input:focus {
+    border-color: rgba(0,180,255,0.5);
+  }
+  
+  .profile-field input::placeholder {
+    color: rgba(255,255,255,0.3);
+  }
+  
+  .phone-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .phone-row input {
+    flex: 1;
+  }
+  
+  .gender-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .gender-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .gender-option:hover {
+    background: rgba(255,255,255,0.1);
+  }
+  
+  .gender-option input {
+    display: none;
+  }
+  
+  .gender-option:has(input:checked) {
+    background: rgba(0,102,255,0.2);
+    border-color: rgba(0,200,255,0.5);
+  }
+  
+  .gender-option span {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .country-select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.5)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+  
+  .country-select option {
+    background: #0A1525;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .otp-btn, .verify-btn {
+    padding: 14px 18px;
+    background: linear-gradient(135deg,#0066FF,#7B2FFF);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .verify-btn {
+    background: linear-gradient(135deg,#00D4FF,#4DA6FF);
+    color: #000;
+  }
+  
+  .verified-badge {
+    display: none;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #00D4FF;
+    text-align: center;
+  }
+  
+  .otp-section {
+    display: none;
+  }
+  
+  .otp-timer {
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+  }
+  
+  .age-display {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #00D4FF;
+    text-align: center;
+  }
+  
+  .save-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg,#0066FF,#7B2FFF);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .signout-page-btn {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 1px solid rgba(255,77,77,0.5);
+    border-radius: 10px;
+    color: #ff4d4d;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  
+  .signout-page-btn:hover {
+    background: rgba(255,77,77,0.1);
+  }
+  
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .back-home:hover {
+    color: #00D4FF;
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="airn.html" class="logo">
+    <div>
+      <span class="logo-text"><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#00D4FF,#4DA6FF);-webkit-background-clip:text;">AI</span><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#B57BFF,#7B2FFF);-webkit-background-clip:text;">RN</span></span>
+      <span class="logo-tagline">AI &amp; ROBOTICS NETWORK</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="airn.html" onclick="showTab('home',this);return false;">Home</a></li>
+    <li><a href="airn.html" onclick="showTab('marketplace',this);return false;">Marketplace</a></li>
+    <li><a href="airn.html" onclick="showTab('build',this);return false;">Build</a></li>
+    <li><a href="airn.html" onclick="showTab('innovate',this);return false;">Community</a></li>
+  </ul>
+
+  <div class="nav-actions" style="margin-left: 48px;">
+    <div id="userAvatar" style="display:none; position:fixed; top:16px; right:48px; z-index:1100;">
+      <div style="position:relative;">
+        <img id="userPic" src="" alt="" style="width:38px;height:38px;border-radius:50%;border:2px solid rgba(0,200,255,0.5);object-fit:cover;cursor:pointer;background:rgba(0,102,255,0.3);" onclick="window.location.href='profile.html'"/>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── PROFILE PAGE ─── -->
+<div class="profile-page">
+  <div style="width:100%; max-width:500px;">
+    <a href="airn.html" class="back-home" onclick="event.preventDefault(); window.location.href='airn.html';">
+      ← Back to Home
+    </a>
+    
+    <div class="profile-container">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="profile-circle">
+          <img id="profilePic" src="" alt="Profile"/>
+          <button class="edit-btn" onclick="document.getElementById('photoInput').click()">✎</button>
+        </div>
+        
+        <input id="profileName" type="text" class="profile-name-input" placeholder="Your Name"/>
+        <div id="profileEmail" class="profile-email"></div>
+      </div>
+      
+      <!-- Profile Body -->
+      <div class="profile-body">
+        <!-- Date of Birth -->
+        <div class="profile-field">
+          <label>Date of Birth</label>
+          <input id="profileDOB" type="date" style="color-scheme:dark;"/>
+          <div id="ageDisplay" class="age-display"></div>
+        </div>
+        
+        <!-- Gender Selection -->
+        <div class="profile-field">
+          <label>Gender</label>
+          <div class="gender-row">
+            <label class="gender-option">
+              <input type="radio" name="gender" value="male">
+              <span>👨 Male</span>
+            </label>
+            <label class="gender-option">
+              <input type="radio" name="gender" value="female">
+              <span>👩 Female</span>
+            </label>
+            <label class="gender-option">
+              <input type="radio" name="gender" value="other">
+              <span>🌈 Other</span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Country Code Selection -->
+        <div class="profile-field">
+          <label>Country</label>
+          <select id="countryCode" class="country-select">
+            <option value="">Select Country</option>
+            <option value="+1">🇺🇸 +1 (United States)</option>
+            <option value="+1">🇨🇦 +1 (Canada)</option>
+            <option value="+44">🇬🇧 +44 (United Kingdom)</option>
+            <option value="+91">🇮🇳 +91 (India)</option>
+            <option value="+86">🇨🇳 +86 (China)</option>
+            <option value="+81">🇯🇵 +81 (Japan)</option>
+            <option value="+49">🇩🇪 +49 (Germany)</option>
+            <option value="+33">🇫🇷 +33 (France)</option>
+            <option value="+39">🇮🇹 +39 (Italy)</option>
+            <option value="+34">🇪🇸 +34 (Spain)</option>
+            <option value="+61">🇦🇺 +61 (Australia)</option>
+            <option value="+55">🇧🇷 +55 (Brazil)</option>
+            <option value="+7">🇷🇺 +7 (Russia)</option>
+            <option value="+82">🇰🇷 +82 (South Korea)</option>
+            <option value="+65">🇸🇬 +65 (Singapore)</option>
+            <option value="+60">🇲🇾 +60 (Malaysia)</option>
+            <option value="+66">🇹🇭 +66 (Thailand)</option>
+            <option value="+92">🇵🇰 +92 (Pakistan)</option>
+            <option value="+880">🇧🇩 +880 (Bangladesh)</option>
+            <option value="+971">🇦🇪 +971 (UAE)</option>
+            <option value="+966">🇸🇦 +966 (Saudi Arabia)</option>
+            <option value="+20">🇪🇬 +20 (Egypt)</option>
+            <option value="+234">🇳🇬 +234 (Nigeria)</option>
+            <option value="+27">🇿🇦 +27 (South Africa)</option>
+          </select>
+        </div>
+        
+        <!-- Phone Number -->
+        <div class="profile-field">
+          <label>Phone Number</label>
+          <div class="phone-row">
+            <input id="profilePhone" type="tel" placeholder="+1 234 567 8900"/>
+            <button id="sendOtpBtn" class="otp-btn">Send OTP</button>
+          </div>
+          <div id="phoneVerified" class="verified-badge">✓ Phone verified</div>
+        </div>
+        
+        <!-- OTP Section -->
+        <div id="otpSection" class="profile-field">
+          <label>Verify OTP</label>
+          <div class="phone-row">
+            <input id="otpInput" type="text" placeholder="Enter 6-digit OTP" maxlength="6" style="letter-spacing:4px; text-align:center;"/>
+            <button id="verifyOtpBtn" class="verify-btn">Verify</button>
+          </div>
+          <div id="otpTimer" class="otp-timer">Resend in <span id="otpCountdown">60</span>s</div>
+        </div>
+        
+        <!-- Save Button -->
+        <button id="saveProfileBtn" class="save-btn">Save Profile</button>
+        
+        <!-- Sign Out Button -->
+        <button id="signOutBtn" class="signout-page-btn" onclick="handleSignOut()" style="display:none;">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="photoInput" accept="image/*" style="display:none;">
+
+<script src="main2.js"></script>
+<script>
+  // Load user data on page load
+  window.addEventListener('DOMContentLoaded', function() {
+    const user = getCurrentUser();
+    if (!user) {
+      // No user logged in, redirect to main page
+      window.location.href = 'airn.html';
+      return;
+    }
+    
+    // Load profile data
+    if (user.name) document.getElementById('profileName').value = user.name;
+    if (user.email) document.getElementById('profileEmail').textContent = user.email;
+    if (user.picture) {
+      document.getElementById('profilePic').src = user.picture;
+      document.getElementById('userPic').src = user.picture;
+    }
+    if (user.phone) document.getElementById('profilePhone').value = user.phone;
+    if (user.dob) {
+      document.getElementById('profileDOB').value = user.dob;
+      calculateAge(user.dob);
+    }
+    if (user.gender) {
+      const genderRadio = document.querySelector('input[name="gender"][value="' + user.gender + '"]');
+      if (genderRadio) genderRadio.checked = true;
+    }
+    if (user.country) {
+      document.getElementById('countryCode').value = user.country;
+    }
+    if (user.phoneVerified) {
+      document.getElementById('phoneVerified').style.display = 'block';
+    }
+    
+    // Show avatar in nav
+    document.getElementById('userAvatar').style.display = 'flex';
+  });
+  
+  function calculateAge(dob) {
+    if (!dob) return;
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    document.getElementById('ageDisplay').textContent = 'Age: ' + age + ' years';
+  }
+  
+  // Calculate age when DOB changes
+  document.getElementById('profileDOB').addEventListener('change', function() {
+    calculateAge(this.value);
+  });
+  
+  // Photo upload
+  document.getElementById('photoInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const photoData = e.target.result;
+      document.getElementById('profilePic').src = photoData;
+      document.getElementById('profilePic').style.background = 'transparent';
+      document.getElementById('userPic').src = photoData;
+      document.getElementById('userPic').style.background = 'transparent';
+      
+      const user = getCurrentUser();
+      if (user) {
+        user.picture = photoData;
+        sessionStorage.setItem('airn_user', JSON.stringify(user));
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+  
+  // Set default avatar if no picture
+  function setDefaultAvatar() {
+    const profilePic = document.getElementById('profilePic');
+    if (!profilePic.src || profilePic.src === '') {
+      profilePic.style.background = 'linear-gradient(135deg, #0066FF, #7B2FFF)';
+    }
+  }
+  setDefaultAvatar();
+  
+  // OTP functionality
+  let generatedOTP = null;
+  let otpTimerInterval = null;
+  const DEFAULT_OTP = '123456';
+  
+  document.getElementById('sendOtpBtn').addEventListener('click', function() {
+    const phone = document.getElementById('profilePhone').value.trim();
+    if (!phone || phone.length < 10) {
+      showToast('Please enter a valid phone number');
+      return;
+    }
+    
+    generatedOTP = DEFAULT_OTP;
+    console.log('OTP:', generatedOTP);
+    
+    document.getElementById('otpSection').style.display = 'block';
+    this.textContent = 'Resend';
+    this.disabled = true;
+    this.style.opacity = '0.5';
+    
+    let countdown = 60;
+    document.getElementById('otpCountdown').textContent = countdown;
+    document.getElementById('otpTimer').style.display = 'block';
+    
+    if (otpTimerInterval) clearInterval(otpTimerInterval);
+    otpTimerInterval = setInterval(function() {
+      countdown--;
+      document.getElementById('otpCountdown').textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(otpTimerInterval);
+        document.getElementById('sendOtpBtn').disabled = false;
+        document.getElementById('sendOtpBtn').style.opacity = '1';
+      }
+    }, 1000);
+    
+    showToast('OTP sent to ' + phone + ' (Default: 123456)');
+  });
+  
+  document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+    const enteredOTP = document.getElementById('otpInput').value.trim();
+    if (!enteredOTP) {
+      showToast('Please enter the OTP');
+      return;
+    }
+    
+    if (enteredOTP === generatedOTP || enteredOTP === DEFAULT_OTP) {
+      document.getElementById('phoneVerified').style.display = 'block';
+      document.getElementById('otpSection').style.display = 'none';
+      showToast('Phone verified successfully!');
+      if (otpTimerInterval) clearInterval(otpTimerInterval);
+    } else {
+      showToast('Invalid OTP');
+    }
+  });
+  
+  // Save profile
+  document.getElementById('saveProfileBtn').addEventListener('click', function() {
+    const name = document.getElementById('profileName').value.trim();
+    const phone = document.getElementById('profilePhone').value.trim();
+    const dob = document.getElementById('profileDOB').value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
+    const country = document.getElementById('countryCode').value;
+    
+    const user = getCurrentUser();
+    if (user) {
+      user.name = name || user.name;
+      user.phone = phone;
+      user.dob = dob;
+      user.gender = gender;
+      user.country = country;
+      user.phoneVerified = document.getElementById('phoneVerified').style.display === 'block';
+      sessionStorage.setItem('airn_user', JSON.stringify(user));
+    }
+    
+    // Show sign out button after saving
+    document.getElementById('signOutBtn').style.display = 'block';
+    
+    showToast('Profile saved successfully!');
+  });
+  
+  // Sign out
+  window.handleSignOut = function() {
+    sessionStorage.removeItem('airn_user');
+    window.location.href = 'airn.html';
+  };
+  
+  // Toast function (copy from main2.js)
+  window.showToast = function(msg) {
+    let t = document.getElementById('toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'toast';
+      t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0066FF,#7B2FFF);color:#fff;padding:14px 28px;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;z-index:10000;display:none;';
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(function() { t.style.display = 'none'; }, 3500);
+  };
+</script>
+
+</body>
+</html>

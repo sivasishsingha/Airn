@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes, maximum-scale=5">
+<meta name="description" content="AIRN — The Global Marketplace for AI & Robotics Inventions">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AIRN">
+<meta name="mobile-web-app-capable" content="yes">
+<title>AIRN — Build the Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="airn.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#" class="logo">
+    <div>
+      <span class="logo-text"><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#00D4FF,#4DA6FF);-webkit-background-clip:text;">AI</span><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#B57BFF,#7B2FFF);-webkit-background-clip:text;">RN</span></span>
+      <span class="logo-tagline">AI &amp; ROBOTICS NETWORK</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#" onclick="showTab('home',this);return false;" class="tab-active" id="tab-link-home">Home</a></li>
+    <li><a href="#" onclick="showTab('marketplace',this);return false;" id="tab-link-marketplace">Marketplace</a></li>
+    <li><a href="#" onclick="showTab('build',this);return false;" id="tab-link-build">Build</a></li>
+    <li><a href="#" onclick="showTab('innovate',this);return false;" id="tab-link-innovate">Community</a></li>
+  </ul>
+
+  <div class="nav-actions" style="margin-left: 48px;">
+    <a href="#" class="btn-ghost" id="loginBtn" onclick="document.getElementById('loginModal').style.display='flex'; return false;">Login</a>
+    <a href="#" class="btn-ghost" id="signupBtn" onclick="document.getElementById('signupModal').style.display='flex'; return false;">Sign Up</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<div id="tab-home" class="tab-page active">
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg-orb orb-1"></div>
+  <div class="hero-bg-orb orb-2"></div>
+  <div class="hero-bg-orb orb-3"></div>
+
+  <div class="hero-content">
+    <!-- 3D animated background behind badge -->
+    <div style="position:relative; display:inline-block; margin-bottom:32px;">
+      <canvas id="bg3d" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:500px; height:220px; pointer-events:none; z-index:0; opacity:0.65;"></canvas>
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:480px; height:200px; background:radial-gradient(ellipse at center, rgba(0,102,255,0.15) 0%, rgba(123,47,255,0.1) 45%, transparent 75%); filter:blur(24px); pointer-events:none; z-index:0;"></div>
+      <div class="hero-badge" style="position:relative; z-index:1;">⬡ NEXT GEN AI & ROBOTIC FUTURE</div>
+    </div>
+    <h1 class="hero-title">
+      The Global<br>
+      Marketplace for<br>
+      <span class="gradient-text">AI & Robotics Inventions</span>
+    </h1>
+    <p class="hero-sub">
+      AIRN is the world's first marketplace where innovators build, showcase, and sell AI robots, chips, and breakthrough technology. Join a global community shaping the future of robotics.
+    </p>
+    <div class="hero-actions">
+      <a href="marketplace.html" class="btn-hero-primary">Explore Marketplace</a>
+      <a href="#" class="btn-hero-outline" id="uploadHeroBtn" onclick="openUploadModal(); return false;">Upload Your Invention</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">12K+</div>
+      <div class="stat-label">Inventors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">48K+</div>
+      <div class="stat-label">Inventions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$4.2M</div>
+      <div class="stat-label">Paid Out</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section id="features">
+  <div class="section-header reveal">
+    <span class="section-eyebrow">// Platform Capabilities</span>
+    <h2 class="section-title">Everything You Need<br>to Innovate</h2>
+    <p class="section-sub">AIRN gives creators and buyers the most powerful tools to build, share, and commercialize technology inventions.</p>
+    <div style="margin-top:24px;"><a href="innovate.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;color:#00D4FF;text-decoration:none;border:1px solid rgba(0,212,255,0.3);padding:10px 22px;border-radius:8px;transition:all 0.25s;" onmouseover="this.style.background='rgba(0,212,255,0.08)'" onmouseout="this.style.background='transparent'">See All Tools & Resources →</a></div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <span class="feature-num">01</span>
+      <div class="feature-icon">
+        <div class="feature-icon-bg" style="background: #0066FF;"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4DA6FF" stroke-width="2" stroke-linecap="round">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Upload Your Invention</h3>
+      <p class="feature-desc">Seamlessly publish robotics blueprints, AI models, hardware specs, and full invention documentation to a global audience of tech enthusiasts.</p>
+    </div>
+
+    <div class="feature-card reveal" style="transition-delay: 0.1s">
+      <span class="feature-num">02</span>
+      <div class="feature-icon">
+        <div class="feature-icon-bg" style="background: #7B2FFF;"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B57BFF" stroke-width="2" stroke-linecap="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Sell Robotics & AI Products</h3>
+      <p class="feature-desc">List AI robots, chip designs, smart devices, and tech components on our marketplace. Reach thousands of buyers and businesses worldwide.</p>
+    </div>
+
+    <div class="feature-card reveal" style="transition-delay: 0.2s">
+      <span class="feature-num">03</span>
+      <div class="feature-icon">
+        <div class="feature-icon-bg" style="background: #00D4FF;"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Discover Innovations</h3>
+      <p class="feature-desc">Browse cutting-edge inventions curated by category. From nano robotics to large-scale automation — find technology that redefines what's possible.</p>
+    </div>
+
+    <div class="feature-card reveal" style="transition-delay: 0.3s">
+      <span class="feature-num">04</span>
+      <div class="feature-icon">
+        <div class="feature-icon-bg" style="background: #0066FF;"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4DA6FF" stroke-width="2" stroke-linecap="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Earn Stipends & Rewards</h3>
+      <p class="feature-desc">AIRN supports innovators with grants, monthly stipends, and performance rewards. Build the future — and get paid for doing it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MARKETPLACE ─── -->
+<section id="marketplace" style="padding: 120px 48px;">
+  <div class="section-header reveal">
+    <span class="section-eyebrow">// Marketplace</span>
+    <h2 class="section-title">Explore the Invention<br>Marketplace</h2>
+    <p class="section-sub">Discover and acquire breakthrough technologies from innovators worldwide. Every listing, a glimpse into tomorrow.</p>
+  </div>
+
+  <div class="marketplace-grid">
+    <!-- Card 1: AI Robot -->
+    <div class="market-card reveal">
+      <div class="market-card-visual" style="background: linear-gradient(135deg, rgba(0,102,255,0.2), rgba(0,0,0,0.8));">
+        <span class="market-tag tag-hot">HOT</span>
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <rect x="30" y="35" width="40" height="40" rx="6" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1.5"/>
+          <rect x="38" y="20" width="24" height="20" rx="5" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1.5"/>
+          <rect x="42" y="26" width="7" height="5" rx="1" fill="#00D4FF" opacity="0.9"/>
+          <rect x="51" y="26" width="7" height="5" rx="1" fill="#00D4FF" opacity="0.9"/>
+          <line x1="50" y1="18" x2="50" y2="12" stroke="#00D4FF" stroke-width="1.5"/>
+          <circle cx="50" cy="10" r="3" fill="#00D4FF"/>
+          <rect x="18" y="38" width="12" height="28" rx="5" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1.5"/>
+          <rect x="70" y="38" width="12" height="28" rx="5" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1.5"/>
+          <rect x="32" y="72" width="14" height="22" rx="6" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1.5"/>
+          <rect x="54" y="72" width="14" height="22" rx="6" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="market-card-body">
+        <p class="market-category">AI Robot</p>
+        <h3 class="market-title">NEXUS-7 Humanoid</h3>
+        <div><span class="market-price">$8,499</span><span class="market-price-old">$10,200</span></div>
+      </div>
+      <div class="market-footer">
+        <div class="market-rating">★★★★★ <span>4.9 (312)</span></div>
+        <button class="btn-market">View</button>
+      </div>
+    </div>
+
+    <!-- Card 2: AI Chip -->
+    <div class="market-card reveal" style="transition-delay:0.08s">
+      <div class="market-card-visual" style="background: linear-gradient(135deg, rgba(123,47,255,0.2), rgba(0,0,0,0.8));">
+        <span class="market-tag tag-new">NEW</span>
+        <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+          <rect x="28" y="28" width="44" height="44" rx="6" fill="rgba(123,47,255,0.3)" stroke="#B57BFF" stroke-width="1.5"/>
+          <rect x="34" y="34" width="32" height="32" rx="3" fill="rgba(123,47,255,0.2)" stroke="#B57BFF" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="28" y1="39" x2="18" y2="39" stroke="#B57BFF" stroke-width="1.5"/><line x1="28" y1="47" x2="18" y2="47" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="28" y1="55" x2="18" y2="55" stroke="#B57BFF" stroke-width="1.5"/><line x1="28" y1="63" x2="18" y2="63" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="72" y1="39" x2="82" y2="39" stroke="#B57BFF" stroke-width="1.5"/><line x1="72" y1="47" x2="82" y2="47" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="72" y1="55" x2="82" y2="55" stroke="#B57BFF" stroke-width="1.5"/><line x1="72" y1="63" x2="82" y2="63" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="39" y1="28" x2="39" y2="18" stroke="#B57BFF" stroke-width="1.5"/><line x1="47" y1="28" x2="47" y2="18" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="55" y1="28" x2="55" y2="18" stroke="#B57BFF" stroke-width="1.5"/><line x1="63" y1="28" x2="63" y2="18" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="39" y1="72" x2="39" y2="82" stroke="#B57BFF" stroke-width="1.5"/><line x1="47" y1="72" x2="47" y2="82" stroke="#B57BFF" stroke-width="1.5"/>
+          <line x1="55" y1="72" x2="55" y2="82" stroke="#B57BFF" stroke-width="1.5"/><line x1="63" y1="72" x2="63" y2="82" stroke="#B57BFF" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="8" fill="#7B2FFF" opacity="0.6"/>
+          <circle cx="50" cy="50" r="3" fill="#B57BFF"/>
+        </svg>
+      </div>
+      <div class="market-card-body">
+        <p class="market-category" style="color: var(--purple-light);">AI Chip</p>
+        <h3 class="market-title">NeuroCore X3 Processor</h3>
+        <div><span class="market-price" style="color: var(--purple-light);">$1,249</span></div>
+      </div>
+      <div class="market-footer">
+        <div class="market-rating">★★★★★ <span>4.8 (189)</span></div>
+        <button class="btn-market" style="color: var(--purple-light); border-color: rgba(123,47,255,0.4); background: rgba(123,47,255,0.1);">View</button>
+      </div>
+    </div>
+
+    <!-- Card 3: Robotics Components -->
+    <div class="market-card reveal" style="transition-delay:0.16s">
+      <div class="market-card-visual" style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,0,0,0.8));">
+        <span class="market-tag tag-top">TOP</span>
+        <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="22" fill="none" stroke="#00D4FF" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="14" fill="rgba(0,212,255,0.15)" stroke="#00D4FF" stroke-width="1"/>
+          <circle cx="50" cy="50" r="5" fill="#00D4FF"/>
+          <line x1="50" y1="28" x2="50" y2="22" stroke="#00D4FF" stroke-width="2"/>
+          <line x1="50" y1="72" x2="50" y2="78" stroke="#00D4FF" stroke-width="2"/>
+          <line x1="28" y1="50" x2="22" y2="50" stroke="#00D4FF" stroke-width="2"/>
+          <line x1="72" y1="50" x2="78" y2="50" stroke="#00D4FF" stroke-width="2"/>
+          <line x1="34.4" y1="34.4" x2="30.2" y2="30.2" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
+          <line x1="65.6" y1="65.6" x2="69.8" y2="69.8" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
+          <line x1="65.6" y1="34.4" x2="69.8" y2="30.2" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
+          <line x1="34.4" y1="65.6" x2="30.2" y2="69.8" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="market-card-body">
+        <p class="market-category" style="color: #00D4FF;">Robotics</p>
+        <h3 class="market-title">Servo Motor Array Pro</h3>
+        <div><span class="market-price" style="color: #00D4FF;">$349</span><span class="market-price-old">$420</span></div>
+      </div>
+      <div class="market-footer">
+        <div class="market-rating">★★★★☆ <span>4.6 (94)</span></div>
+        <button class="btn-market" style="color: #00D4FF; border-color: rgba(0,212,255,0.4); background: rgba(0,212,255,0.08);">View</button>
+      </div>
+    </div>
+
+    <!-- Card 4: Smart Devices -->
+    <div class="market-card reveal" style="transition-delay:0.24s">
+      <div class="market-card-visual" style="background: linear-gradient(135deg, rgba(0,102,255,0.15), rgba(123,47,255,0.15));">
+        <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+          <rect x="25" y="20" width="50" height="60" rx="8" fill="rgba(0,102,255,0.2)" stroke="#4DA6FF" stroke-width="1.5"/>
+          <rect x="32" y="28" width="36" height="26" rx="3" fill="rgba(0,0,0,0.5)" stroke="rgba(77,166,255,0.4)" stroke-width="1"/>
+          <line x1="36" y1="35" x2="52" y2="35" stroke="#4DA6FF" stroke-width="1"/><line x1="36" y1="40" x2="48" y2="40" stroke="#4DA6FF" stroke-width="1" opacity="0.5"/>
+          <line x1="36" y1="45" x2="50" y2="45" stroke="#4DA6FF" stroke-width="1" opacity="0.3"/>
+          <circle cx="50" cy="67" r="5" fill="rgba(0,102,255,0.3)" stroke="#4DA6FF" stroke-width="1"/>
+          <line x1="43" y1="78" x2="57" y2="78" stroke="#4DA6FF" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="66" cy="30" r="8" fill="rgba(0,212,255,0.2)" stroke="#00D4FF" stroke-width="1"/>
+          <path d="M63 30 L65 32 L69 28" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="market-card-body">
+        <p class="market-category">Smart Device</p>
+        <h3 class="market-title">IoT Neural Hub v2</h3>
+        <div><span class="market-price">$699</span></div>
+      </div>
+      <div class="market-footer">
+        <div class="market-rating">★★★★★ <span>4.7 (201)</span></div>
+        <button class="btn-market">View</button>
+      </div>
+    </div>
+
+    <!-- Card 5: Tech Invention -->
+    <div class="market-card reveal" style="transition-delay:0.32s">
+      <div class="market-card-visual" style="background: linear-gradient(135deg, rgba(123,47,255,0.2), rgba(0,102,255,0.1));">
+        <span class="market-tag tag-new">NEW</span>
+        <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+          <polygon points="50,18 78,35 78,65 50,82 22,65 22,35" fill="rgba(123,47,255,0.2)" stroke="#B57BFF" stroke-width="1.5"/>
+          <polygon points="50,28 68,38 68,62 50,72 32,62 32,38" fill="none" stroke="#B57BFF" stroke-width="1" opacity="0.5"/>
+          <circle cx="50" cy="50" r="10" fill="rgba(123,47,255,0.4)" stroke="#B57BFF" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="4" fill="#B57BFF"/>
+          <line x1="50" y1="40" x2="50" y2="28" stroke="#B57BFF" stroke-width="1" opacity="0.6"/>
+          <line x1="58.7" y1="45" x2="68" y2="38" stroke="#B57BFF" stroke-width="1" opacity="0.6"/>
+          <line x1="58.7" y1="55" x2="68" y2="62" stroke="#B57BFF" stroke-width="1" opacity="0.6"/>
+          <line x1="50" y1="60" x2="50" y2="72" stroke="#B57BFF" stroke-width="1" opacity="0.6"/>
+          <line x1="41.3" y1="55" x2="32" y2="62" stroke="#B57BFF" stroke-width="1" opacity="0.6"/>
+          <line x1="41.3" y1="45" x2="32" y2="38" stroke="#B57BFF" stroke-width="1" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="market-card-body">
+        <p class="market-category" style="color: var(--purple-light);">Tech Invention</p>
+        <h3 class="market-title">QuantumSense Array</h3>
+        <div><span class="market-price" style="color: var(--purple-light);">$2,180</span></div>
+      </div>
+      <div class="market-footer">
+        <div class="market-rating">★★★★★ <span>5.0 (47)</span></div>
+        <button class="btn-market" style="color: var(--purple-light); border-color: rgba(123,47,255,0.4); background: rgba(123,47,255,0.1);">View</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top: 56px;" class="reveal">
+    <a href="marketplace.html" class="btn-hero-outline">Browse All Inventions →</a>
+  </div>
+</section>
+
+<!-- ─── CREATOR ─── -->
+<section id="creator">
+  <div style="max-width:1400px; margin:0 auto; padding: 0 48px 120px;">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">// For Creators</span>
+      <h2 class="section-title">Bring Your Invention<br>to the World</h2>
+      <p class="section-sub">From idea to income — AIRN gives you the tools, audience, and infrastructure to monetize your innovations.</p>
+    </div>
+
+    <div class="creator-inner">
+      <div class="creator-steps reveal">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Create Your Account</h3>
+            <p>Sign up as a creator in minutes. Set up your inventor profile, showcase your background, and link your portfolio to build credibility with buyers.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Upload Your Invention</h3>
+            <p>Upload documentation, blueprints, 3D models, code repositories, and demo videos. Our AI-assisted listing tool makes your invention shine.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Set Your Price & License</h3>
+            <p>Choose how you sell — one-time purchase, licensing model, or subscription. Full control over your IP and revenue structure.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Earn & Scale</h3>
+            <p>Get paid instantly on every sale. Access performance dashboards, buyer analytics, and AIRN's creator grants to reinvest in your next breakthrough.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="creator-visual reveal" style="transition-delay: 0.2s">
+        <div class="creator-panel creator-panel-main">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+            <div>
+              <div style="font-family:'Manrope',sans-serif; font-size:13px; font-weight:700;">Upload Invention</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:4px; font-family:'Inter',sans-serif;">AIRN Creator Studio</div>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,60,60,0.7);"></div>
+              <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,180,0,0.7);"></div>
+              <div style="width:10px;height:10px;border-radius:50%;background:rgba(0,200,80,0.7);"></div>
+            </div>
+          </div>
+
+          <div class="upload-zone">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4DA6FF" stroke-width="1.5" stroke-linecap="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span class="upload-icon-text">DRAG FILES OR CLICK TO UPLOAD</span>
+            <span style="font-size:11px; color:rgba(255,255,255,0.2);">Supports .pdf, .stl, .zip, .mp4, .glb</span>
+          </div>
+
+          <label class="panel-label">Invention Title</label>
+          <input type="text" class="panel-input" placeholder="e.g. Autonomous Delivery Robot MK3" readonly>
+
+          <label class="panel-label">Category</label>
+          <input type="text" class="panel-input" placeholder="AI Robot / Chip / Robotics Component..." readonly>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <label class="panel-label">Price (USD)</label>
+              <input type="text" class="panel-input" placeholder="$0.00" readonly>
+            </div>
+            <div>
+              <label class="panel-label">License Type</label>
+              <input type="text" class="panel-input" placeholder="Commercial" readonly>
+            </div>
+          </div>
+
+          <button style="width:100%; padding:14px; background:linear-gradient(135deg,var(--blue),var(--purple)); border:none; border-radius:4px; color:#fff; font-family:'Manrope',sans-serif; font-size:12px; letter-spacing:2px; cursor:pointer;">
+            PUBLISH INVENTION
+          </button>
+        </div>
+
+        <div class="earnings-card">
+          <div class="earnings-label">THIS MONTH</div>
+          <div class="earnings-amount">$4,820</div>
+          <div class="earnings-change">↑ +38% vs last month</div>
+          <div style="margin-top:16px; display:flex; gap:4px; align-items:flex-end; height:40px;">
+            <div style="flex:1;background:rgba(0,102,255,0.3);border-radius:2px;height:55%"></div>
+            <div style="flex:1;background:rgba(0,102,255,0.4);border-radius:2px;height:70%"></div>
+            <div style="flex:1;background:rgba(0,102,255,0.35);border-radius:2px;height:45%"></div>
+            <div style="flex:1;background:rgba(0,102,255,0.5);border-radius:2px;height:80%"></div>
+            <div style="flex:1;background:rgba(0,102,255,0.45);border-radius:2px;height:60%"></div>
+            <div style="flex:1;background:rgba(77,166,255,0.7);border-radius:2px;height:100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REWARDS ─── -->
+<section id="rewards" style="padding: 120px 48px;">
+  <div class="section-header reveal">
+    <span class="section-eyebrow">// Stipends & Rewards</span>
+    <h2 class="section-title">AIRN Invests in<br>Your Vision</h2>
+    <p class="section-sub">We don't just provide a marketplace — we fund the innovators building the future. Every creator deserves the resources to realize their potential.</p>
+  </div>
+
+  <div class="rewards-grid">
+    <div class="reward-card reveal">
+      <span class="reward-icon">🔬</span>
+      <h3 class="reward-title">Innovation Stipend</h3>
+      <div class="reward-amount">$500/mo</div>
+      <p class="reward-desc">Active creators who publish qualifying inventions receive monthly stipends to fund R&D, tools, components, and development infrastructure.</p>
+    </div>
+
+    <div class="reward-card featured reveal" style="transition-delay: 0.1s">
+      <span class="reward-icon">🚀</span>
+      <h3 class="reward-title">Breakthrough Grant</h3>
+      <div class="reward-amount">Up to $25K</div>
+      <p class="reward-desc">Exceptional inventions selected by the AIRN committee receive one-time breakthrough grants to scale production, file patents, and reach new markets.</p>
+    </div>
+
+    <div class="reward-card reveal" style="transition-delay: 0.2s">
+      <span class="reward-icon">🏆</span>
+      <h3 class="reward-title">Sales Rewards</h3>
+      <div class="reward-amount">Up to 20% Bonus</div>
+      <p class="reward-desc">Top-selling inventors earn performance bonuses on sales milestones. Hit $10K, $50K, and $100K in sales to unlock escalating reward tiers.</p>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:60px auto 0; padding:40px; background:rgba(255,255,255,0.02); border:1px solid rgba(0,102,255,0.15); border-radius:8px; display:flex; align-items:center; gap:32px; flex-wrap:wrap;" class="reveal">
+    <div style="flex:1; min-width:240px;">
+      <div style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:3px; color:var(--cyan); margin-bottom:10px;">COMMUNITY PROGRAM</div>
+      <h3 style="font-family:'Manrope',sans-serif; font-size:20px; font-weight:800; margin-bottom:12px; line-height:1.3;">AIRN Accelerator Program</h3>
+      <p style="font-size:14px; color:rgba(255,255,255,0.45); line-height:1.8;">Mentorship, resources, and direct funding for selected early-stage inventors. Applications open quarterly.</p>
+    </div>
+    <a href="#" class="btn-hero-primary" style="white-space:nowrap;">Apply Now →</a>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<div class="cta-band reveal">
+  <h2 class="cta-title">Ready to Build<br><span style="background:linear-gradient(90deg,var(--blue-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">the Future?</span></h2>
+  <p class="cta-sub">Join 12,000+ inventors already building, selling, and earning on AIRN. Your invention could be next.</p>
+  <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; position:relative;">
+    <a href="#" class="btn-hero-primary">Create Free Account</a>
+    <a href="#marketplace" class="btn-hero-outline">Browse Marketplace</a>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="margin-bottom:0">
+        <div>
+          <span class="logo-text"><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#00D4FF,#4DA6FF);-webkit-background-clip:text;">AI</span><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#B57BFF,#7B2FFF);-webkit-background-clip:text;">RN</span></span>
+          <span class="logo-tagline">AI &amp; ROBOTICS NETWORK</span>
+        </div>
+      </a>
+      <p>The world's leading platform for robotics and AI invention — where engineers, creators, and visionaries build the technologies of tomorrow.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+        <a href="#" class="social-link" title="LinkedIn">in</a>
+        <a href="#" class="social-link" title="GitHub">⌥</a>
+        <a href="#" class="social-link" title="Discord">⬡</a>
+        <a href="#" class="social-link" title="YouTube">▷</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">Marketplace</a></li>
+        <li><a href="#">Creator Studio</a></li>
+        <li><a href="#">AI Tools</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">API Access</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About AIRN</a></li>
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Creator Grants</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Community Forum</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 AIRN INC. ALL RIGHTS RESERVED.</div>
+    <div class="footer-status">
+      <span class="status-dot"></span>
+      ALL SYSTEMS OPERATIONAL
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── HAMBURGER MENU ──
+  function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const btn = document.getElementById('hamburger');
+    navLinks.classList.toggle('mobile-open');
+    btn.classList.toggle('open');
+  }
+  // Close menu when a nav link is clicked on mobile
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('mobile-open');
+      const btn = document.getElementById('hamburger');
+      if (btn) btn.classList.remove('open');
+    });
+  });
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const cursorRing = document.getElementById('cursorRing');
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursor.style.left = mouseX - 6 + 'px';
+    cursor.style.top = mouseY - 6 + 'px';
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX - 18) * 0.12;
+    ringY += (mouseY - ringY - 18) * 0.12;
+    cursorRing.style.left = ringX + 'px';
+    cursorRing.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2)';
+      cursorRing.style.width = '60px';
+      cursorRing.style.height = '60px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      cursorRing.style.width = '36px';
+      cursorRing.style.height = '36px';
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Animated counter
+  function animateCounter(el, target, suffix = '') {
+    let start = 0;
+    const duration = 2000;
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const val = Math.floor(eased * target);
+      el.textContent = val.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const nums = entry.target.querySelectorAll('.stat-num');
+        nums.forEach(num => {
+          const text = num.textContent;
+          if (text.includes('K')) {
+            const val = parseFloat(text);
+            animateCounter(num, val * 1000, 'K+');
+            setTimeout(() => { num.textContent = text; }, 2100);
+          } else if (text.includes('M')) {
+            num.textContent = '$4.2M';
+          }
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) statsObserver.observe(heroStats);
+
+  // Glitch effect on logo
+  const logoText = document.querySelector('.logo-text');
+  const chars = 'AIRN';
+  function glitch() {
+    if (Math.random() > 0.97) {
+      const rand = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let g = '';
+      for (let i = 0; i < 4; i++) {
+        g += Math.random() > 0.7 ? rand[Math.floor(Math.random() * rand.length)] : chars[i];
+      }
+      logoText.textContent = g;
+      setTimeout(() => { logoText.textContent = chars; }, 80);
+    }
+    setTimeout(glitch, 200);
+  }
+  glitch();
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(0,0,0,0.92)';
+    } else {
+      nav.style.background = 'rgba(0,0,0,0.7)';
+    }
+  });
+
+  // Parallax orbs
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    document.querySelectorAll('.hero-bg-orb').forEach((orb, i) => {
+      const speed = [0.3, 0.2, 0.4][i];
+      orb.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+  });
+</script>
+<!-- ─── LOGIN MODAL ─── -->
+
+</div>
+
+<div id="tab-marketplace" class="tab-page">
+  <div style="padding:60px 48px 40px; background:linear-gradient(180deg, rgba(0,50,150,0.08), transparent); border-bottom:1px solid rgba(255,255,255,0.05);">
+    <span style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:4px; color:#00D4FF; text-transform:uppercase; display:block; margin-bottom:14px;">// Marketplace</span>
+    <h1 style="font-family:'Manrope',sans-serif; font-size:clamp(28px,4vw,52px); font-weight:900; line-height:1.1; margin-bottom:12px;">Explore <span style="background:linear-gradient(90deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">All Inventions</span></h1>
+    <p style="font-size:15px; color:rgba(255,255,255,0.45); max-width:500px; line-height:1.7;">Browse, like, and buy breakthrough technologies from innovators around the world.</p>
+    <div style="display:flex; gap:32px; flex-wrap:wrap; margin-top:20px;">
+      <div><div id="mktStatTotal" style="font-family:'Manrope',sans-serif;font-size:26px;font-weight:900;background:linear-gradient(135deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">0</div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:2px;">Inventions</div></div>
+      <div><div id="mktStatCats" style="font-family:'Manrope',sans-serif;font-size:26px;font-weight:900;background:linear-gradient(135deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">0</div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:2px;">Categories</div></div>
+      <div><div id="mktStatAvail" style="font-family:'Manrope',sans-serif;font-size:26px;font-weight:900;background:linear-gradient(135deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">0</div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:2px;">Available</div></div>
+    </div>
+  </div>
+  <div style="padding:20px 48px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div style="flex:1; min-width:200px; max-width:380px; position:relative;">
+      <svg style="position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:0.4;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="mktSearch" placeholder="Search inventions..." oninput="renderMktGrid()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 16px 11px 42px;color:#fff;font-family:'Inter',sans-serif;font-size:14px;outline:none;"/>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;" id="mktPills">
+      <button class="mpill active-mpill" onclick="setMktFilter('all',this)">All</button>
+      <button class="mpill" onclick="setMktFilter('AI Robot',this)">🤖 AI Robot</button>
+      <button class="mpill" onclick="setMktFilter('AI Chip',this)">💾 AI Chip</button>
+      <button class="mpill" onclick="setMktFilter('Robotics',this)">⚙️ Robotics</button>
+      <button class="mpill" onclick="setMktFilter('Smart Device',this)">📱 Smart Device</button>
+      <button class="mpill" onclick="setMktFilter('Tech Invention',this)">🔬 Tech Invention</button>
+    </div>
+    <select id="mktSort" onchange="renderMktGrid()" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 16px;color:#fff;font-family:'Inter',sans-serif;font-size:13px;outline:none;cursor:pointer;margin-left:auto;">
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="price-low">Price: Low → High</option>
+      <option value="price-high">Price: High → Low</option>
+      <option value="popular">Most Liked</option>
+    </select>
+  </div>
+  <div style="padding:32px 48px 80px;">
+    <div id="mktGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;"></div>
+  </div>
+</div>
+<div id="tab-innovate" class="tab-page">
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-eyebrow">// Everything You Need to Innovate</span>
+  <h1>Your Complete<br><span>Innovation Hub</span></h1>
+  <p>AIRN provides every tool, resource, and community connection you need to go from idea to invention — and from invention to income.</p>
+  <div class="hero-cta">
+    <a href="airn.html" class="btn-primary" onclick="setTimeout(()=>document.getElementById('uploadHeroBtn').click(), 300)">Upload Your Invention</a>
+    <a href="marketplace.html" class="btn-outline">Browse Marketplace</a>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section>
+  <div class="reveal">
+    <span class="section-eyebrow">// Platform Capabilities</span>
+    <h2 class="section-title">Four Ways to Build<br>on AIRN</h2>
+    <p class="section-sub">From uploading your first invention to scaling your robotics business — AIRN has you covered at every stage.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <span class="feat-num">01</span>
+      <div class="feat-icon" style="background:rgba(0,102,255,0.15);">📤</div>
+      <h3 class="feat-title">Upload Your Invention</h3>
+      <p class="feat-desc">Publish blueprints, AI models, hardware specs, images, and demo videos. Our streamlined upload flow gets your invention live in minutes.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.08s">
+      <span class="feat-num">02</span>
+      <div class="feat-icon" style="background:rgba(123,47,255,0.15);">🛒</div>
+      <h3 class="feat-title">Sell on the Marketplace</h3>
+      <p class="feat-desc">List AI robots, chip designs, smart devices, and components. Set your own price, choose a license type, and reach thousands of buyers worldwide.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.16s">
+      <span class="feat-num">03</span>
+      <div class="feat-icon" style="background:rgba(0,212,255,0.12);">🔬</div>
+      <h3 class="feat-title">Discover Innovations</h3>
+      <p class="feat-desc">Browse cutting-edge inventions by category. Filter, like, and follow creators whose work excites you. Find technology that redefines what's possible.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.24s">
+      <span class="feat-num">04</span>
+      <div class="feat-icon" style="background:rgba(0,102,255,0.15);">💰</div>
+      <h3 class="feat-title">Earn Stipends & Rewards</h3>
+      <p class="feat-desc">Active creators receive monthly stipends, breakthrough grants up to $25K, and performance bonuses for hitting sales milestones.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="reveal">
+    <span class="section-eyebrow">// Creator Tools</span>
+    <h2 class="section-title">Everything in One Place</h2>
+    <p class="section-sub">Purpose-built tools designed for robotics and AI inventors — not generic software adapted after the fact.</p>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card reveal">
+      <span class="tool-badge badge-blue">📁 CREATOR STUDIO</span>
+      <h3 class="tool-title">Invention Upload Tool</h3>
+      <p class="tool-desc">Post your invention like a social media post — with images, detailed descriptions, pricing, and license control.</p>
+      <ul class="tool-features">
+        <li>Photo & video upload support</li>
+        <li>Category tagging system</li>
+        <li>Flexible pricing (free to $999K+)</li>
+        <li>Commercial / Open Source licensing</li>
+      </ul>
+    </div>
+    <div class="tool-card reveal" style="transition-delay:0.1s">
+      <span class="tool-badge badge-purple">🛍️ MARKETPLACE</span>
+      <h3 class="tool-title">Live Invention Feed</h3>
+      <p class="tool-desc">A real-time, searchable, filterable marketplace where buyers discover and purchase inventions instantly.</p>
+      <ul class="tool-features">
+        <li>Filter by category & price</li>
+        <li>Like and follow inventions</li>
+        <li>Full detail view per listing</li>
+        <li>One-click buy flow</li>
+      </ul>
+    </div>
+    <div class="tool-card reveal" style="transition-delay:0.2s">
+      <span class="tool-badge badge-green">📊 ANALYTICS</span>
+      <h3 class="tool-title">Creator Dashboard</h3>
+      <p class="tool-desc">Track views, likes, sales, and revenue across all your inventions. Know exactly what's working.</p>
+      <ul class="tool-features">
+        <li>Real-time sales tracking</li>
+        <li>Audience demographics</li>
+        <li>Revenue per invention</li>
+        <li>Monthly stipend tracker</li>
+      </ul>
+    </div>
+    <div class="tool-card reveal" style="transition-delay:0.3s">
+      <span class="tool-badge badge-blue">🔐 IP PROTECTION</span>
+      <h3 class="tool-title">License Management</h3>
+      <p class="tool-desc">Control how your intellectual property is used. Set terms, enforce licenses, and protect your innovations.</p>
+      <ul class="tool-features">
+        <li>Commercial use control</li>
+        <li>Exclusive rights option</li>
+        <li>Open source publishing</li>
+        <li>Patent filing assistance</li>
+      </ul>
+    </div>
+    <div class="tool-card reveal" style="transition-delay:0.4s">
+      <span class="tool-badge badge-purple">🤝 COMMUNITY</span>
+      <h3 class="tool-title">Inventor Network</h3>
+      <p class="tool-desc">Connect with 12,000+ inventors worldwide. Collaborate, get feedback, and find co-founders.</p>
+      <ul class="tool-features">
+        <li>Creator profiles & portfolios</li>
+        <li>Direct messaging</li>
+        <li>Collaboration requests</li>
+        <li>Community forums</li>
+      </ul>
+    </div>
+    <div class="tool-card reveal" style="transition-delay:0.5s">
+      <span class="tool-badge badge-green">🚀 ACCELERATOR</span>
+      <h3 class="tool-title">AIRN Grants Program</h3>
+      <p class="tool-desc">Funding, mentorship, and resources for exceptional inventors. Quarterly applications, real capital.</p>
+      <ul class="tool-features">
+        <li>Up to $25K breakthrough grants</li>
+        <li>$500/mo innovation stipends</li>
+        <li>1:1 expert mentorship</li>
+        <li>Investor introductions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section">
+  <div class="reveal">
+    <span class="section-eyebrow">// How It Works</span>
+    <h2 class="section-title">From Idea to Income<br>in Four Steps</h2>
+    <p class="section-sub">AIRN makes it simple to go from your first sketch to your first sale — and beyond.</p>
+  </div>
+  <div class="steps-layout">
+    <div class="steps-list reveal">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-text">
+          <h3>Create Your Account</h3>
+          <p>Sign up with Google in seconds. Set up your inventor profile, add your background, and link your existing portfolio to build instant credibility with buyers.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-text">
+          <h3>Upload Your Invention</h3>
+          <p>Post photos, videos, technical specs, and blueprints. Write a compelling description and choose your category. It goes live immediately in the global marketplace.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-text">
+          <h3>Set Your Price & License</h3>
+          <p>Choose how you want to sell — one-time purchase, licensing model, or open source. You have full control over your IP and how buyers can use it.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-text">
+          <h3>Get Paid & Scale</h3>
+          <p>Earn on every sale. Apply for AIRN grants and stipends to fund your next invention. Use analytics to understand your audience and grow your revenue.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:0.2s">
+      <div class="steps-panel">
+        <div class="panel-row">
+          <div style="font-family:'Manrope',sans-serif; font-size:13px; font-weight:700;">Creator Dashboard</div>
+          <div class="panel-dots">
+            <div class="dot" style="background:rgba(255,60,60,0.7);"></div>
+            <div class="dot" style="background:rgba(255,180,0,0.7);"></div>
+            <div class="dot" style="background:rgba(0,200,80,0.7);"></div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+          <div class="panel-stat">
+            <div class="panel-stat-num">$4,820</div>
+            <div class="panel-stat-label">This Month</div>
+          </div>
+          <div class="panel-stat">
+            <div class="panel-stat-num">312</div>
+            <div class="panel-stat-label">Total Views</div>
+          </div>
+          <div class="panel-stat">
+            <div class="panel-stat-num">18</div>
+            <div class="panel-stat-label">Sales</div>
+          </div>
+          <div class="panel-stat">
+            <div class="panel-stat-num">94%</div>
+            <div class="panel-stat-label">Satisfaction</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:10px;">MONTHLY REVENUE</div>
+        <div style="display:flex; gap:6px; align-items:flex-end; height:60px;">
+          <div style="flex:1;background:rgba(0,102,255,0.3);border-radius:3px;height:45%;"></div>
+          <div style="flex:1;background:rgba(0,102,255,0.4);border-radius:3px;height:60%;"></div>
+          <div style="flex:1;background:rgba(0,102,255,0.35);border-radius:3px;height:40%;"></div>
+          <div style="flex:1;background:rgba(0,102,255,0.5);border-radius:3px;height:75%;"></div>
+          <div style="flex:1;background:rgba(0,102,255,0.45);border-radius:3px;height:55%;"></div>
+          <div style="flex:1;background:rgba(77,166,255,0.8);border-radius:3px;height:100%;"></div>
+        </div>
+        <div style="margin-top:20px; font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:10px;">TOP INVENTIONS</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:5px;"><span>NEXUS-7 Humanoid</span><span style="color:rgba(255,255,255,0.4);">$2,100</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:85%; background:linear-gradient(90deg,#0066FF,#00D4FF);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:5px;"><span>NeuroCore X3</span><span style="color:rgba(255,255,255,0.4);">$1,490</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:60%; background:linear-gradient(90deg,#7B2FFF,#B57BFF);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:5px;"><span>Servo Motor Array</span><span style="color:rgba(255,255,255,0.4);">$700</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:38%; background:linear-gradient(90deg,#00D4FF,#4DA6FF);"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REWARDS -->
+<section class="rewards-section">
+  <div class="reveal">
+    <span class="section-eyebrow">// Stipends & Rewards</span>
+    <h2 class="section-title">AIRN Invests in Your Vision</h2>
+    <p class="section-sub">We don't just provide a marketplace — we fund the innovators building the future.</p>
+  </div>
+  <div class="rewards-grid">
+    <div class="reward-card reveal">
+      <span class="reward-icon">🔬</span>
+      <h3 class="reward-title">Innovation Stipend</h3>
+      <div class="reward-amount">$500 / mo</div>
+      <p class="reward-desc">Active creators who publish qualifying inventions receive monthly stipends to fund R&D, tools, components, and development infrastructure.</p>
+    </div>
+    <div class="reward-card featured reveal" style="transition-delay:0.1s">
+      <span class="reward-icon">🚀</span>
+      <h3 class="reward-title">Breakthrough Grant</h3>
+      <div class="reward-amount">Up to $25K</div>
+      <p class="reward-desc">Exceptional inventions selected by the AIRN committee receive one-time grants to scale production, file patents, and reach new markets.</p>
+    </div>
+    <div class="reward-card reveal" style="transition-delay:0.2s">
+      <span class="reward-icon">🏆</span>
+      <h3 class="reward-title">Sales Bonus</h3>
+      <div class="reward-amount">Up to 20%</div>
+      <p class="reward-desc">Top-selling inventors earn performance bonuses at $10K, $50K, and $100K in sales milestones — escalating reward tiers.</p>
+    </div>
+  </div>
+
+  <!-- Accelerator Banner -->
+  <div style="max-width:800px; margin:48px auto 0; padding:36px 40px; background:rgba(255,255,255,0.02); border:1px solid rgba(0,102,255,0.15); border-radius:16px; display:flex; align-items:center; gap:32px; flex-wrap:wrap;" class="reveal">
+    <div style="flex:1; min-width:220px;">
+      <div style="font-size:10px; letter-spacing:3px; color:var(--cyan); margin-bottom:10px; font-weight:600;">COMMUNITY PROGRAM</div>
+      <h3 style="font-family:'Manrope',sans-serif; font-size:20px; font-weight:800; margin-bottom:10px;">AIRN Accelerator Program</h3>
+      <p style="font-size:14px; color:rgba(255,255,255,0.4); line-height:1.8;">Mentorship, resources, and direct funding for selected early-stage inventors. Applications open quarterly.</p>
+    </div>
+    <a href="#" class="btn-primary">Apply Now →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band reveal">
+  <h2>Ready to Build the Future?<br><span style="background:linear-gradient(90deg,var(--blue-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Start Today — It's Free.</span></h2>
+  <p>Join 12,000+ inventors already building, selling, and earning on AIRN.</p>
+  <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; position:relative;">
+    <a href="airn.html" class="btn-primary">Create Free Account</a>
+    <a href="marketplace.html" class="btn-outline">Browse Marketplace</a>
+  </div>
+</div>
+
+
+</div>
+<div id="loginModal" style="display:none; position:fixed; inset:0; z-index:9000; align-items:center; justify-content:center; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px);">
+  <div style="background:#07101F; border:1px solid rgba(0,150,255,0.25); border-radius:20px; padding:48px 40px; width:100%; max-width:420px; position:relative; box-shadow:0 0 60px rgba(0,100,255,0.2);">
+
+    <!-- Close -->
+    <button onclick="document.getElementById('loginModal').style.display='none'" style="position:absolute;top:18px;right:20px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;line-height:1;">✕</button>
+
+    <!-- Logo -->
+    <div style="text-align:center; margin-bottom:32px;">
+      <div style="font-family:'Manrope',sans-serif; font-size:28px; font-weight:900; margin-bottom:6px;">
+        <span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#00D4FF,#4DA6FF);-webkit-background-clip:text;">AI</span><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#B57BFF,#7B2FFF);-webkit-background-clip:text;">RN</span>
+      </div>
+      <p style="font-size:14px; color:rgba(255,255,255,0.4); font-family:'Inter',sans-serif;">Sign in to your account</p>
+    </div>
+
+    <!-- Google Sign-In Button -->
+    <div id="googleSignInBtn" style="display:flex; justify-content:center; margin-bottom:24px;"></div>
+
+    <!-- One-tap fallback message -->
+    <div id="loginStatus" style="text-align:center; font-size:13px; color:rgba(255,255,255,0.35); font-family:'Inter',sans-serif; margin-top:8px;"></div>
+
+    <!-- Divider -->
+    <div style="display:flex; align-items:center; gap:12px; margin:24px 0;">
+      <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
+      <span style="font-size:12px; color:rgba(255,255,255,0.25); font-family:'Inter',sans-serif;">OR</span>
+      <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
+    </div>
+
+    <!-- Email login fields -->
+    <div style="margin-bottom:14px;">
+      <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Email</label>
+      <input id="loginEmail" type="email" placeholder="you@example.com" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+    </div>
+    <div style="margin-bottom:24px;">
+      <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Password</label>
+      <div style="position:relative;">
+        <input id="loginPassword" type="password" placeholder="••••••••" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:13px 48px 13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        <button type="button" onclick="togglePasswordVisibility()" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:rgba(255,255,255,0.4); cursor:pointer; font-size:16px; padding:4px;">👁</button>
+      </div>
+      <a href="#" style="display:block; text-align:right; margin-top:8px; font-size:12px; color:#4DA6FF; text-decoration:none; font-family:'Inter',sans-serif;" onclick="alert('Forgot password feature coming soon!'); return false;">Forgot Password?</a>
+    </div>
+
+    <button onclick="handleEmailLogin()" style="width:100%; padding:14px; background:linear-gradient(135deg,#0066FF,#7B2FFF); border:none; border-radius:8px; color:#fff; font-family:'Manrope',sans-serif; font-size:14px; font-weight:700; letter-spacing:1px; cursor:pointer; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      Sign In
+    </button>
+
+    <p style="text-align:center; margin-top:20px; font-size:13px; color:rgba(255,255,255,0.35); font-family:'Inter',sans-serif;">
+      Don't have an account? <a href="#" style="color:#4DA6FF; text-decoration:none;" onclick="document.getElementById('loginModal').style.display='none'; document.getElementById('signupModal').style.display='flex'; return false;">Sign Up</a>
+    </p>
+  </div>
+</div>
+
+<!-- ─── USER AVATAR (shown after login) ─── -->
+<div id="userAvatar" style="display:none; position:fixed; top:16px; right:48px; z-index:1100;">
+  <img id="userPic" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230066FF'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E" alt="" style="width:38px;height:38px;border-radius:50%;border:2px solid rgba(0,200,255,0.5);object-fit:cover;cursor:pointer;background:rgba(0,102,255,0.3);" onclick="event.stopPropagation(); document.getElementById('profileDropdown').style.display = document.getElementById('profileDropdown').style.display === 'none' ? 'block' : 'none';"/>
+</div>
+<input type="file" id="profilePhotoInput" accept="image/*" style="display:none;">
+
+<!-- ─── PROFILE DROPDOWN MODAL ─── -->
+<div id="profileDropdown" onclick="event.stopPropagation()" style="display:none; position:fixed; top:70px; right:48px; z-index:1200; width:320px; background:#0A1525; border:1px solid rgba(0,150,255,0.25); border-radius:20px; box-shadow:0 8px 32px rgba(0,0,0,0.5); overflow:hidden;">
+  <!-- Profile Circle Header -->
+  <div style="padding:28px 20px 20px; text-align:center;">
+    <!-- Profile Circle with Sign Out inside -->
+    <div style="position:relative; display:inline-block;">
+      <img id="dropdownUserPic" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230066FF'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E" alt="" style="width:90px;height:90px;border-radius:50%;border:3px solid rgba(0,200,255,0.5);object-fit:cover;background:linear-gradient(135deg, #0066FF, #7B2FFF);"/>
+      <button id="signOutBtn" title="Sign Out" style="position:absolute; bottom:2px; left:2px; width:28px; height:28px; border-radius:50%; background:rgba(255,77,77,0.9); border:3px solid #0A1525; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:11px;">⏻</button>
+    </div>
+    
+    <!-- Editable Name -->
+    <div style="margin-top:16px;">
+      <input id="profileName" type="text" placeholder="Your Name" style="width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.2); border-radius:0; padding:8px 0; color:#fff; font-family:'Manrope',sans-serif; font-size:18px; font-weight:700; text-align:center; outline:none;"/>
+    </div>
+    
+    <!-- Gmail/Email (read-only display) -->
+    <div id="profileEmailDisplay" style="margin-top:8px; font-family:'Inter',sans-serif; font-size:13px; color:rgba(255,255,255,0.5);"></div>
+  </div>
+
+  <!-- Profile Fields -->
+  <div style="padding:0 24px 24px;">
+    <!-- Date of Birth with Age -->
+    <div style="margin-bottom:16px;">
+      <label style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Date of Birth</label>
+      <input id="profileAge" type="date" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; color-scheme:dark;"/>
+      <div id="ageDisplay" style="margin-top:6px; font-size:12px; color:#00D4FF; text-align:center;"></div>
+    </div>
+
+    <!-- Phone Number with OTP -->
+    <div style="margin-bottom:16px;">
+      <label style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Phone Number</label>
+      <div style="display:flex; gap:8px;">
+        <input id="profilePhone" type="tel" placeholder="+1 234 567 8900" style="flex:1; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none;"/>
+        <button id="sendOtpBtn" onclick="sendOTP()" style="padding:12px 14px; background:linear-gradient(135deg,#0066FF,#7B2FFF); border:none; border-radius:8px; color:#fff; font-family:'Inter',sans-serif; font-size:11px; font-weight:600; cursor:pointer; white-space:nowrap;">Send OTP</button>
+      </div>
+      <div id="phoneVerified" style="display:none; margin-top:6px; font-size:11px; color:#00D4FF; text-align:center;">✓ Phone verified</div>
+    </div>
+
+    <!-- OTP Verification -->
+    <div id="otpSection" style="display:none; margin-bottom:16px;">
+      <label style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Verify OTP</label>
+      <div style="display:flex; gap:8px;">
+        <input id="otpInput" type="text" placeholder="Enter 6-digit OTP" maxlength="6" style="flex:1; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; letter-spacing:4px; text-align:center;"/>
+        <button id="verifyOtpBtn" onclick="verifyOTP()" style="padding:12px 14px; background:linear-gradient(135deg,#00D4FF,#4DA6FF); border:none; border-radius:8px; color:#000; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; cursor:pointer;">Verify</button>
+      </div>
+      <div id="otpTimer" style="margin-top:6px; font-size:11px; color:rgba(255,255,255,0.4); text-align:center;">Resend in <span id="otpCountdown">60</span>s</div>
+    </div>
+
+    <!-- Gender Selection -->
+    <div style="margin-bottom:20px;">
+      <label style="font-family:'Inter',sans-serif; font-size:10px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Gender</label>
+      <div style="display:flex; gap:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:8px;">
+        <label style="flex:1; cursor:pointer; text-align:center; color:#fff; font-family:'Inter',sans-serif; font-size:14px;">
+          <input type="radio" name="gender" value="male" style="margin-right:6px;">Male
+        </label>
+        <label style="flex:1; cursor:pointer; text-align:center; color:#fff; font-family:'Inter',sans-serif; font-size:14px;">
+          <input type="radio" name="gender" value="female" style="margin-right:6px;">Female
+        </label>
+        <label style="flex:1; cursor:pointer; text-align:center; color:#fff; font-family:'Inter',sans-serif; font-size:14px;">
+          <input type="radio" name="gender" value="other" style="margin-right:6px;">Other
+        </label>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button id="saveProfileBtn" onclick="window.saveProfile()" style="width:100%; padding:14px; background:linear-gradient(135deg,#0066FF,#7B2FFF); border:none; border-radius:8px; color:#fff; font-family:'Manrope',sans-serif; font-size:14px; font-weight:700; cursor:pointer;">Save Profile</button>
+  </div>
+</div>
+
+<!-- Google Identity Services -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+  // ════════════════════════════════════════════════════════
+  // STEP 1: Replace the value below with your Google Client ID
+  // Get it free at: https://console.cloud.google.com
+  // APIs & Services → Credentials → Create OAuth 2.0 Client ID
+  // ════════════════════════════════════════════════════════
+  const GOOGLE_CLIENT_ID = '883027040719-64j73f95ga3cc8aadacrueki0loanu56.apps.googleusercontent.com';
+
+  // Function to render Google sign-in button
+  function renderGoogleButton() {
+    if (typeof google !== 'undefined' && google.accounts) {
+      try {
+        google.accounts.id.initialize({
+          client_id: GOOGLE_CLIENT_ID,
+          callback: handleGoogleCredential,
+          auto_select: false,
+        });
+        google.accounts.id.renderButton(
+          document.getElementById('googleSignInBtn'),
+          {
+            theme: 'filled_black',
+            size: 'large',
+            width: 340,
+            text: 'signin_with',
+            shape: 'rectangular',
+          }
+        );
+        return true;
+      } catch (e) {
+        console.error('Google Sign-In error:', e);
+        document.getElementById('loginStatus').textContent = 'Google Sign-In configuration error.';
+        document.getElementById('loginStatus').style.color = '#FF6B6B';
+        return false;
+      }
+    }
+    return false;
+  }
+
+  // Try to render on load, with retry
+  window.onload = function() {
+    // First attempt
+    if (!renderGoogleButton()) {
+      // Retry after a short delay if Google script not ready
+      setTimeout(renderGoogleButton, 500);
+    }
+  };
+
+  // Also try when Google script loads
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if (!document.getElementById('googleSignInBtn').hasChildNodes()) {
+        renderGoogleButton();
+      }
+    }, 1000);
+  });
+
+  function handleGoogleCredential(response) {
+    // Decode JWT to get user info
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    loginSuccess(payload.name, payload.picture, payload.email);
+  }
+
+  function handleEmailLogin() {
+    const email    = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const statusEl = document.getElementById('loginStatus');
+
+    if (!email || !password) {
+      statusEl.textContent = 'Please enter your email and password.';
+      statusEl.style.color  = '#FF6B6B';
+      return;
+    }
+    statusEl.textContent = '';
+    loginSuccess(email.split('@')[0], '', email);
+  }
+
+  function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('loginPassword');
+    const toggleBtn = passwordInput.nextElementSibling;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleBtn.textContent = '🔒';
+    } else {
+      passwordInput.type = 'password';
+      toggleBtn.textContent = '👁';
+    }
+  }
+
+  function toggleSignupPasswordVisibility() {
+    const passwordInput = document.getElementById('signupPassword');
+    const toggleBtn = passwordInput.nextElementSibling;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleBtn.textContent = '🔒';
+    } else {
+      passwordInput.type = 'password';
+      toggleBtn.textContent = '👁';
+    }
+  }
+
+  function loginSuccess(name, picture, email) {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('signupModal').style.display = 'none';
+    document.getElementById('loginBtn').style.display = 'none';
+    document.getElementById('signupBtn').style.display = 'none';
+
+    const avatar = document.getElementById('userAvatar');
+    avatar.style.display = 'flex';
+    document.getElementById('userName').textContent = name;
+    if (picture) {
+      document.getElementById('userPic').src = picture;
+      document.getElementById('userPic').style.display = 'block';
+    } else {
+      document.getElementById('userPic').style.display = 'none';
+    }
+
+    sessionStorage.setItem('airn_user', JSON.stringify({ name, picture, email }));
+  }
+
+  function handleSignOut() {
+    if (typeof google !== 'undefined') google.accounts.id.disableAutoSelect();
+    sessionStorage.removeItem('airn_user');
+    document.getElementById('userAvatar').style.display = 'none';
+    document.getElementById('loginBtn').style.display = 'inline-block';
+    document.getElementById('signupBtn').style.display = 'inline-block';
+    document.getElementById('profileModal').style.display = 'none';
+  }
+
+  // Profile Photo Upload
+  window.handleProfilePhotoUpload = function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const photoData = e.target.result;
+      document.getElementById('userPic').src = photoData;
+      document.getElementById('dropdownUserPic').src = photoData;
+      
+      // Save to session
+      const savedUser = sessionStorage.getItem('airn_user');
+      if (savedUser) {
+        const u = JSON.parse(savedUser);
+        u.picture = photoData;
+        sessionStorage.setItem('airn_user', JSON.stringify(u));
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
+  // Profile Modal Functions
+  function openProfileModal() {
+    const savedUser = sessionStorage.getItem('airn_user');
+    if (savedUser) {
+      const u = JSON.parse(savedUser);
+      document.getElementById('profilePhone').value = u.phone || '';
+      document.getElementById('profileDOB').value = u.dob || '';
+      
+      if (u.profilePic) {
+        document.getElementById('profilePicPreview').src = u.profilePic;
+        document.getElementById('profilePicPreview').style.display = 'block';
+        document.getElementById('profilePicPlaceholder').style.display = 'none';
+      } else {
+        document.getElementById('profilePicPreview').style.display = 'none';
+        document.getElementById('profilePicPlaceholder').style.display = 'block';
+      }
+    }
+    document.getElementById('profileModal').style.display = 'flex';
+  }
+
+  function handleProfilePicUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('profilePicPreview').src = e.target.result;
+        document.getElementById('profilePicPreview').style.display = 'block';
+        document.getElementById('profilePicPlaceholder').style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function saveProfile() {
+    const phone = document.getElementById('profilePhone').value.trim();
+    const dob = document.getElementById('profileDOB').value;
+    const profilePic = document.getElementById('profilePicPreview').src;
+    
+    const savedUser = sessionStorage.getItem('airn_user');
+    if (savedUser) {
+      const u = JSON.parse(savedUser);
+      u.phone = phone;
+      u.dob = dob;
+      u.profilePic = profilePic || u.profilePic;
+      sessionStorage.setItem('airn_user', JSON.stringify(u));
+    }
+    
+    document.getElementById('profileModal').style.display = 'none';
+    
+    // If phone is provided, open OTP verification
+    if (phone && phone.length >= 10) {
+      openOtpVerifyModal(phone);
+    }
+  }
+
+  // OTP Verification Functions
+  function openOtpVerifyModal(phone) {
+    document.getElementById('otpPhoneDisplay').textContent = 'Enter OTP sent to ' + phone;
+    document.getElementById('otpVerifyModal').style.display = 'flex';
+    document.getElementById('otpVerifyStatus').textContent = '';
+    document.getElementById('otpVerifyStatus').style.color = 'rgba(255,255,255,0.35)';
+    
+    // Clear OTP fields
+    for (let i = 1; i <= 6; i++) {
+      document.getElementById('verifyOtp' + i).value = '';
+    }
+    
+    setTimeout(() => {
+      document.getElementById('verifyOtp1').focus();
+    }, 100);
+  }
+
+  function closeOtpVerifyModal() {
+    document.getElementById('otpVerifyModal').style.display = 'none';
+  }
+
+  function verifyPhoneOTP() {
+    let otp = '';
+    for (let i = 1; i <= 6; i++) {
+      otp += document.getElementById('verifyOtp' + i).value;
+    }
+    
+    const statusEl = document.getElementById('otpVerifyStatus');
+    
+    if (otp.length !== 6) {
+      statusEl.textContent = 'Please enter complete 6-digit OTP.';
+      statusEl.style.color = '#FF6B6B';
+      return;
+    }
+    
+    // For demo, accept any 6-digit OTP
+    // In production, verify with backend
+    statusEl.textContent = 'Phone verified successfully!';
+    statusEl.style.color = '#4DA6FF';
+    
+    // Save phone verification status
+    const savedUser = sessionStorage.getItem('airn_user');
+    if (savedUser) {
+      const u = JSON.parse(savedUser);
+      u.phoneVerified = true;
+      sessionStorage.setItem('airn_user', JSON.stringify(u));
+    }
+    
+    setTimeout(() => {
+      closeOtpVerifyModal();
+    }, 1500);
+  }
+
+  function resendOTP() {
+    const statusEl = document.getElementById('otpVerifyStatus');
+    statusEl.textContent = 'OTP resent successfully!';
+    statusEl.style.color = '#4DA6FF';
+  }
+
+  // Auto-move between OTP fields
+  document.addEventListener('DOMContentLoaded', function() {
+    const verifyOtpInputs = ['verifyOtp1', 'verifyOtp2', 'verifyOtp3', 'verifyOtp4', 'verifyOtp5', 'verifyOtp6'];
+    verifyOtpInputs.forEach((id, index) => {
+      const input = document.getElementById(id);
+      if (input) {
+        input.addEventListener('input', function() {
+          if (this.value.length === 1 && index < 5) {
+            document.getElementById(verifyOtpInputs[index + 1]).focus();
+          }
+        });
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
+            document.getElementById(verifyOtpInputs[index - 1]).focus();
+          }
+        });
+      }
+    });
+  });
+
+  // Restore session on reload
+  const savedUser = sessionStorage.getItem('airn_user');
+  if (savedUser) {
+    const u = JSON.parse(savedUser);
+    loginSuccess(u.name, u.picture, u.email);
+  }
+
+
+
+  // ══════════════════════════════════════════
+  // TAB SYSTEM
+  // ══════════════════════════════════════════
+  function showTab(name, linkEl) {
+    document.querySelectorAll('.tab-page').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('tab-active'));
+    const tab = document.getElementById('tab-' + name);
+    if (tab) tab.classList.add('active');
+    if (linkEl) linkEl.classList.add('tab-active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (name === 'marketplace') {
+      inventions = JSON.parse(localStorage.getItem('airn_inventions') || '[]');
+      renderMktGrid();
+    }
+    if (name === 'innovate') { setTimeout(initInnovateReveal, 120); }
+    sessionStorage.setItem('airn_tab', name);
+  }
+
+  // Wire external links to tabs
+  document.addEventListener('click', function(e) {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (href === 'marketplace.html' || href.includes('#marketplace') && href !== '#marketplace') {
+      e.preventDefault();
+      showTab('marketplace', document.getElementById('tab-link-marketplace'));
+    }
+    if (href === 'innovate.html') {
+      e.preventDefault();
+      showTab('innovate', document.getElementById('tab-link-innovate'));
+    }
+  });
+
+  // Restore tab
+  const lastTab = sessionStorage.getItem('airn_tab');
+  if (lastTab && lastTab !== 'home') {
+    setTimeout(() => showTab(lastTab, document.getElementById('tab-link-' + lastTab)), 50);
+  }
+
+  // ══════════════════════════════════════════
+  // MARKETPLACE GRID
+  // ══════════════════════════════════════════
+  let mktFilter = 'all';
+
+  function setMktFilter(cat, btn) {
+    mktFilter = cat;
+    document.querySelectorAll('.mpill').forEach(p => p.classList.remove('active-mpill'));
+    btn.classList.add('active-mpill');
+    renderMktGrid();
+  }
+
+  function renderMktGrid() {
+    const invs = JSON.parse(localStorage.getItem('airn_inventions') || '[]');
+    const grid = document.getElementById('mktGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    const el1=document.getElementById('mktStatTotal'); if(el1) el1.textContent=invs.length;
+    const el2=document.getElementById('mktStatCats'); if(el2) el2.textContent=new Set(invs.map(i=>i.category)).size;
+    const el3=document.getElementById('mktStatAvail'); if(el3) el3.textContent=invs.filter(i=>!i.sold).length;
+    let list = mktFilter==='all' ? [...invs] : invs.filter(i=>i.category===mktFilter);
+    const q = (document.getElementById('mktSearch')||{}).value||'';
+    if(q) list=list.filter(i=>(i.title+i.desc+i.author).toLowerCase().includes(q.toLowerCase()));
+    const sort=(document.getElementById('mktSort')||{}).value||'newest';
+    if(sort==='newest') list.sort((a,b)=>b.id-a.id);
+    else if(sort==='oldest') list.sort((a,b)=>a.id-b.id);
+    else if(sort==='price-low') list.sort((a,b)=>a.price-b.price);
+    else if(sort==='price-high') list.sort((a,b)=>b.price-a.price);
+    else if(sort==='popular') list.sort((a,b)=>(b.likes||0)-(a.likes||0));
+    if(!list.length){
+      grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:80px 20px;color:rgba(255,255,255,0.25);"><div style=\"font-size:56px;margin-bottom:16px;\">🔬</div><p style=\"font-family:Manrope,sans-serif;font-size:18px;font-weight:600;margin-bottom:8px;\">No inventions yet</p><p>Be the first to upload!</p></div>';
+      return;
+    }
+    const user=getCurrentUser();
+    list.forEach((inv,idx)=>{
+      const liked=user&&inv.likedBy&&inv.likedBy.includes(user.email);
+      const card=document.createElement('div');
+      card.style.cssText='background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;transition:all 0.3s;animation:cardIn 0.4s ease both;animation-delay:'+(idx*0.04)+'s;cursor:pointer;';
+      const bg=inv.image?'':'background:linear-gradient(135deg,rgba(0,50,150,0.3),rgba(60,0,120,0.3));';
+      const img=inv.image?`<img src="${inv.image}" style="width:100%;height:100%;object-fit:cover;"/>`:`<div style="font-size:52px;">${getCategoryEmoji(inv.category)}</div>`;
+      card.innerHTML=`<div style="${bg}height:210px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">${img}<span style="position:absolute;top:12px;left:12px;padding:4px 10px;background:rgba(0,0,0,0.65);border:1px solid rgba(0,212,255,0.3);border-radius:100px;font-size:10px;letter-spacing:2px;color:#00D4FF;">${inv.category.toUpperCase()}</span>${inv.sold?'<span style="position:absolute;top:12px;right:12px;padding:4px 10px;background:rgba(255,80,80,0.2);border:1px solid rgba(255,80,80,0.4);border-radius:100px;font-size:10px;color:#FF6B6B;">SOLD</span>':''}</div><div style="padding:18px;"><div style="font-family:Manrope,sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${inv.title}</div><div style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;">${inv.desc}</div><div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">${inv.authorPic?`<img src="${inv.authorPic}" style="width:24px;height:24px;border-radius:50%;border:1px solid rgba(0,200,255,0.3);"/>`:`<div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0066FF,#7B2FFF);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">${inv.author[0].toUpperCase()}</div>`}<span style="font-size:12px;color:rgba(255,255,255,0.4);">${inv.author}</span><span style="margin-left:auto;font-size:11px;color:rgba(255,255,255,0.22);">${timeAgo(inv.timestamp)}</span>${user&&inv.authorEmail===user.email?`<button onclick="deleteInvention(${inv.id},event)" title="Delete" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.25);border-radius:6px;color:rgba(255,100,100,0.7);font-size:12px;padding:3px 8px;cursor:pointer;" onmouseover="this.style.background='rgba(255,60,60,0.25)'" onmouseout="this.style.background='rgba(255,60,60,0.1)'">🗑</button>`:''}</div><div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-family:Manrope,sans-serif;font-size:20px;font-weight:900;background:linear-gradient(90deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">$${Number(inv.price).toLocaleString()}</span><div style="display:flex;gap:7px;"><button onclick="mktToggleLike(${inv.id},event)" style="padding:7px 11px;border-radius:8px;border:1px solid ${liked?'rgba(255,100,100,0.4)':'rgba(255,255,255,0.1)'};background:transparent;color:${liked?'#FF6B6B':'rgba(255,255,255,0.4)'};font-size:13px;cursor:pointer;">${liked?'❤️':'🤍'} ${inv.likes||0}</button><button onclick="openMktDetail(${inv.id})" style="padding:7px 14px;border-radius:8px;border:1px solid rgba(0,150,255,0.3);background:rgba(0,100,255,0.1);color:#4DA6FF;font-size:12px;font-weight:600;cursor:pointer;">View</button><button onclick="mktBuy(${inv.id},event)" ${inv.sold?'disabled':''} style="padding:7px 14px;border-radius:8px;border:none;background:${inv.sold?'rgba(255,255,255,0.05)':'linear-gradient(135deg,#0066FF,#7B2FFF)'};color:${inv.sold?'rgba(255,255,255,0.3)':'#fff'};font-size:12px;font-weight:600;cursor:${inv.sold?'not-allowed':'pointer'};">${inv.sold?'Sold':'Buy'}</button></div></div></div>`;
+      card.addEventListener('mouseenter',()=>{card.style.transform='translateY(-6px)';card.style.borderColor='rgba(0,150,255,0.25)';card.style.boxShadow='0 20px 50px rgba(0,0,0,0.5)';});
+      card.addEventListener('mouseleave',()=>{card.style.transform='';card.style.borderColor='rgba(255,255,255,0.08)';card.style.boxShadow='';});
+      grid.appendChild(card);
+    });
+  }
+
+  function mktToggleLike(id,e) {
+    e.stopPropagation();
+    const user=getCurrentUser();
+    if(!user){showToast('⚠️ Please log in to like');return;}
+    const invs=JSON.parse(localStorage.getItem('airn_inventions')||'[]');
+    const inv=invs.find(i=>i.id===id); if(!inv) return;
+    if(!inv.likedBy) inv.likedBy=[];
+    if(inv.likedBy.includes(user.email)){inv.likedBy=inv.likedBy.filter(x=>x!==user.email);inv.likes=Math.max(0,(inv.likes||1)-1);}
+    else{inv.likedBy.push(user.email);inv.likes=(inv.likes||0)+1;}
+    localStorage.setItem('airn_inventions',JSON.stringify(invs));
+    inventions=invs; renderMktGrid(); renderFeed();
+  }
+
+  function mktBuy(id,e) {
+    if(e) e.stopPropagation();
+    const user=getCurrentUser();
+    if(!user){showToast('⚠️ Please log in to buy');return;}
+    const invs=JSON.parse(localStorage.getItem('airn_inventions')||'[]');
+    const inv=invs.find(i=>i.id===id); if(!inv||inv.sold) return;
+    if(inv.authorEmail===user.email){showToast('⚠️ Cannot buy your own invention');return;}
+    if(confirm('Purchase "'+inv.title+'" for $'+Number(inv.price).toLocaleString()+'?')){
+      inv.sold=true;
+      localStorage.setItem('airn_inventions',JSON.stringify(invs));
+      inventions=invs; renderMktGrid(); renderFeed();
+      document.getElementById('detailModal').style.display='none';
+      showToast('✅ Purchase initiated! '+inv.author+' will be notified.');
+    }
+  }
+
+  function openMktDetail(id) {
+    const invs=JSON.parse(localStorage.getItem('airn_inventions')||'[]');
+    const inv=invs.find(i=>i.id===id); if(!inv) return;
+    const user=getCurrentUser();
+    const liked=user&&inv.likedBy&&inv.likedBy.includes(user.email);
+    const img=inv.image?`<img src="${inv.image}" style="width:100%;height:100%;object-fit:cover;"/>`:`<div style="font-size:80px;">${getCategoryEmoji(inv.category)}</div>`;
+    const bg=inv.image?'':'background:linear-gradient(135deg,rgba(0,50,150,0.4),rgba(60,0,120,0.4));';
+    document.getElementById('detailContent').innerHTML=`<div style="${bg}height:280px;display:flex;align-items:center;justify-content:center;border-radius:24px 24px 0 0;overflow:hidden;">${img}</div><div style="padding:28px 32px 32px;"><div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;"><span style="padding:4px 12px;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:100px;font-size:11px;letter-spacing:2px;color:#00D4FF;">${inv.category.toUpperCase()}</span><span style="padding:4px 12px;background:rgba(123,47,255,0.1);border:1px solid rgba(123,47,255,0.3);border-radius:100px;font-size:11px;color:#B57BFF;">${inv.license}</span>${inv.sold?'<span style=\"padding:4px 12px;background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.3);border-radius:100px;font-size:11px;color:#FF6B6B;\">SOLD</span>':''}</div><h2 style="font-family:Manrope,sans-serif;font-size:24px;font-weight:800;margin-bottom:12px;">${inv.title}</h2><p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:24px;">${inv.desc}</p><div style="display:flex;align-items:center;gap:12px;padding:16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.07);margin-bottom:24px;">${inv.authorPic?`<img src="${inv.authorPic}" style="width:40px;height:40px;border-radius:50%;border:2px solid rgba(0,200,255,0.3);"/>`:`<div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0066FF,#7B2FFF);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;">${inv.author[0].toUpperCase()}</div>`}<div><div style="font-family:Manrope,sans-serif;font-size:14px;font-weight:600;">${inv.author}</div><div style="font-size:12px;color:rgba(255,255,255,0.35);">${timeAgo(inv.timestamp)}</div></div></div><div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;"><div><div style="font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:4px;letter-spacing:2px;">PRICE</div><div style="font-family:Manrope,sans-serif;font-size:32px;font-weight:900;background:linear-gradient(90deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">$${Number(inv.price).toLocaleString()}</div></div><div style="display:flex;gap:10px;"><button onclick="mktToggleLike(${inv.id},event)" style="padding:12px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:${liked?'#FF6B6B':'rgba(255,255,255,0.5)'};font-size:16px;cursor:pointer;">${liked?'❤️':'🤍'} ${inv.likes||0}</button><button onclick="mktBuy(${inv.id})" ${inv.sold?'disabled':''} style="padding:12px 32px;border-radius:10px;border:none;background:${inv.sold?'rgba(255,255,255,0.05)':'linear-gradient(135deg,#0066FF,#7B2FFF)'};color:${inv.sold?'rgba(255,255,255,0.3)':'#fff'};font-family:Manrope,sans-serif;font-size:15px;font-weight:700;cursor:${inv.sold?'not-allowed':'pointer'};">${inv.sold?'Sold Out':'🛒 Buy Now'}</button></div></div></div>`;
+    document.getElementById('detailModal').style.display='flex';
+  }
+
+  // ══════════════════════════════════════════
+  // INNOVATE REVEAL
+  // ══════════════════════════════════════════
+  function initInnovateReveal() {
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),60);obs.unobserve(e.target);}});
+    },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('#tab-innovate .reveal').forEach(el=>{el.classList.remove('visible');obs.observe(el);});
+  }
+
+  // Pill styles
+  (function(){const s=document.createElement('style');s.textContent='.mpill{padding:8px 18px;border-radius:100px;font-size:12px;font-weight:500;border:1px solid rgba(255,255,255,0.12);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;transition:all 0.2s;white-space:nowrap;}.mpill:hover,.active-mpill{border-color:rgba(0,212,255,0.5)!important;background:rgba(0,212,255,0.1)!important;color:#00D4FF!important;}';document.head.appendChild(s);})();
+
+  // Auto-refresh marketplace every 5s
+  setInterval(()=>{
+    if(document.getElementById('tab-marketplace').classList.contains('active')){
+      renderMktGrid();
+    }
+  },5000);
+
+
+  // Close modal on backdrop click
+  document.getElementById('loginModal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+</script>
+<!-- SIGNUP MODAL -->
+<div id="signupModal" style="display:none; position:fixed; inset:0; z-index:9000; align-items:center; justify-content:center; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px);">
+  <div style="background:#07101F; border:1px solid rgba(0,150,255,0.25); border-radius:20px; padding:48px 40px; width:100%; max-width:420px; position:relative; box-shadow:0 0 60px rgba(0,100,255,0.2);">
+
+    <button onclick="document.getElementById('signupModal').style.display='none'" style="position:absolute;top:18px;right:20px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;line-height:1;">✕</button>
+
+    <div style="text-align:center; margin-bottom:32px;">
+      <div style="font-family:'Manrope',sans-serif; font-size:28px; font-weight:900; margin-bottom:6px;">
+        <span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#00D4FF,#4DA6FF);-webkit-background-clip:text;">AI</span><span style="-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#B57BFF,#7B2FFF);-webkit-background-clip:text;">RN</span>
+      </div>
+      <p style="font-size:14px; color:rgba(255,255,255,0.4); font-family:'Inter',sans-serif;">Create your account</p>
+    </div>
+
+    <!-- Google Sign-Up Button -->
+    <div id="googleSignUpBtn" style="display:flex; justify-content:center; margin-bottom:24px;"></div>
+    <div id="signupStatus" style="text-align:center; font-size:13px; color:rgba(255,255,255,0.35); font-family:'Inter',sans-serif; margin-top:8px;"></div>
+
+    <!-- Divider -->
+    <div style="display:flex; align-items:center; gap:12px; margin:24px 0;">
+      <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
+      <span style="font-size:12px; color:rgba(255,255,255,0.25); font-family:'Inter',sans-serif;">OR</span>
+      <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
+    </div>
+
+    <div style="margin-bottom:14px;">
+      <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Full Name</label>
+      <input id="signupName" type="text" placeholder="Your name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+    </div>
+    <div style="margin-bottom:14px;">
+      <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Email</label>
+      <input id="signupEmail" type="email" placeholder="you@example.com" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+    </div>
+    <div style="margin-bottom:24px;">
+      <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Password</label>
+      <div style="position:relative;">
+        <input id="signupPassword" type="password" placeholder="••••••••" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:13px 48px 13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        <button type="button" onclick="toggleSignupPasswordVisibility()" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:rgba(255,255,255,0.4); cursor:pointer; font-size:16px; padding:4px;">👁</button>
+      </div>
+    </div>
+
+    <button onclick="handleEmailSignup()" style="width:100%; padding:14px; background:linear-gradient(135deg,#0066FF,#7B2FFF); border:none; border-radius:8px; color:#fff; font-family:'Manrope',sans-serif; font-size:14px; font-weight:700; letter-spacing:1px; cursor:pointer; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      Create Account
+    </button>
+
+    <p style="text-align:center; margin-top:20px; font-size:13px; color:rgba(255,255,255,0.35); font-family:'Inter',sans-serif;">
+      Already have an account? <a href="#" style="color:#4DA6FF; text-decoration:none;" onclick="document.getElementById('signupModal').style.display='none'; document.getElementById('loginModal').style.display='flex'; return false;">Log In</a>
+    </p>
+  </div>
+</div>
+<!-- END SIGNUP MODAL -->
+
+<script>
+  // Render Google button in signup modal too
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if (typeof google !== 'undefined' && google.accounts) {
+        try {
+          google.accounts.id.renderButton(
+            document.getElementById('googleSignUpBtn'),
+            { theme: 'filled_black', size: 'large', width: 340, text: 'signup_with', shape: 'rectangular' }
+          );
+        } catch (e) {
+          console.error('Google Sign-Up error:', e);
+          document.getElementById('signupStatus').textContent = 'Google Sign-In configuration error.';
+          document.getElementById('signupStatus').style.color = '#FF6B6B';
+        }
+      } else {
+        document.getElementById('signupStatus').textContent = 'Add your Google Client ID to enable Google sign-up.';
+      }
+    }, 800);
+  });
+
+  function handleEmailSignup() {
+    const name     = document.getElementById('signupName').value.trim();
+    const email    = document.getElementById('signupEmail').value.trim();
+    const password = document.getElementById('signupPassword').value;
+    const statusEl = document.getElementById('signupStatus');
+
+    if (!name || !email || !password) {
+      statusEl.textContent = 'Please fill in all fields.';
+      statusEl.style.color  = '#FF6B6B';
+      return;
+    }
+    if (password.length < 6) {
+      statusEl.textContent = 'Password must be at least 6 characters.';
+      statusEl.style.color  = '#FF6B6B';
+      return;
+    }
+    
+    statusEl.textContent = '';
+    loginSuccess(name, '', email);
+  }
+
+  // Close signup modal on backdrop click
+  document.getElementById('signupModal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+</script>
+<!-- ─── UPLOAD MODAL ─── -->
+<div id="uploadModal" style="display:none; position:fixed; inset:0; z-index:9100; align-items:center; justify-content:center; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px);">
+  <div style="background:#07101F; border:1px solid rgba(0,150,255,0.25); border-radius:24px; padding:0; width:100%; max-width:580px; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 0 80px rgba(0,100,255,0.25);">
+
+    <!-- Header -->
+    <div style="padding:28px 36px 20px; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; background:#07101F; z-index:10; border-radius:24px 24px 0 0;">
+      <div>
+        <h2 style="font-family:'Manrope',sans-serif; font-size:20px; font-weight:800; margin-bottom:2px;">Upload Invention</h2>
+        <p style="font-size:12px; color:rgba(255,255,255,0.35); font-family:'Inter',sans-serif;">Share your creation with the world</p>
+      </div>
+      <button onclick="document.getElementById('uploadModal').style.display='none'" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50%; width:36px; height:36px; color:rgba(255,255,255,0.5); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center;">✕</button>
+    </div>
+
+    <div style="padding:28px 36px 36px;" id="uploadFormBody">
+
+      <!-- Image Upload Zone -->
+      <div id="uploadZone" onclick="document.getElementById('inventionImageInput').click()" style="border:2px dashed rgba(0,150,255,0.3); border-radius:16px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; cursor:pointer; margin-bottom:24px; transition:all 0.3s; position:relative; overflow:hidden;" onmouseover="this.style.borderColor='rgba(0,200,255,0.6)'; this.style.background='rgba(0,100,255,0.05)'" onmouseout="this.style.borderColor='rgba(0,150,255,0.3)'; this.style.background='transparent'">
+        <img id="uploadPreview" src="" alt="" style="display:none; position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:14px;"/>
+        <div id="uploadZoneContent">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,200,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p style="font-family:'Inter',sans-serif; font-size:13px; color:rgba(255,255,255,0.4);">Click to upload photo / video</p>
+          <p style="font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,0.2);">JPG, PNG, GIF, MP4 supported</p>
+        </div>
+        <input type="file" id="inventionImageInput" accept="image/*,video/*" style="display:none;" onchange="previewImage(this)"/>
+      </div>
+
+      <!-- Form Fields -->
+      <div style="display:grid; gap:16px;">
+        <div>
+          <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Invention Title *</label>
+          <input id="invTitle" type="text" placeholder="e.g. Autonomous Delivery Robot MK3" maxlength="80" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        </div>
+        <div>
+          <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Description *</label>
+          <textarea id="invDesc" placeholder="Describe your invention, its features, and what makes it unique..." rows="3" maxlength="400" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; resize:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div>
+            <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Category *</label>
+            <select id="invCategory" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; cursor:pointer;">
+              <option value="" style="background:#07101F;">Select category</option>
+              <option value="AI Robot" style="background:#07101F;">🤖 AI Robot</option>
+              <option value="AI Chip" style="background:#07101F;">💾 AI Chip</option>
+              <option value="Robotics" style="background:#07101F;">⚙️ Robotics</option>
+              <option value="Smart Device" style="background:#07101F;">📱 Smart Device</option>
+              <option value="Tech Invention" style="background:#07101F;">🔬 Tech Invention</option>
+              <option value="Software" style="background:#07101F;">💻 Software</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">Price (USD) *</label>
+            <input id="invPrice" type="number" placeholder="0.00" min="0" step="0.01" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(0,180,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+          </div>
+        </div>
+        <div>
+          <label style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; display:block; margin-bottom:8px;">License Type</label>
+          <select id="invLicense" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:13px 16px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none; cursor:pointer;">
+            <option value="Commercial" style="background:#07101F;">Commercial</option>
+            <option value="Personal" style="background:#07101F;">Personal Use Only</option>
+            <option value="Open Source" style="background:#07101F;">Open Source</option>
+            <option value="Exclusive" style="background:#07101F;">Exclusive Rights</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="uploadError" style="color:#FF6B6B; font-size:13px; font-family:'Inter',sans-serif; margin-top:12px; display:none;"></div>
+
+      <button onclick="submitInvention()" style="width:100%; margin-top:24px; padding:16px; background:linear-gradient(135deg,#0066FF,#7B2FFF); border:none; border-radius:12px; color:#fff; font-family:'Manrope',sans-serif; font-size:15px; font-weight:700; letter-spacing:1px; cursor:pointer; transition:all 0.25s; position:relative; overflow:hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 30px rgba(0,102,255,0.4)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
+        🚀 Publish Invention
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── INVENTION DETAIL MODAL ─── -->
+<div id="detailModal" style="display:none; position:fixed; inset:0; z-index:9200; align-items:center; justify-content:center; background:rgba(0,0,0,0.9); backdrop-filter:blur(12px);">
+  <div style="background:#07101F; border:1px solid rgba(0,150,255,0.2); border-radius:24px; width:100%; max-width:640px; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 0 80px rgba(0,80,200,0.3);">
+    <button onclick="document.getElementById('detailModal').style.display='none'" style="position:absolute; top:18px; right:20px; z-index:10; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); border-radius:50%; width:36px; height:36px; color:rgba(255,255,255,0.5); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center;">✕</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<!-- ─── LIVE MARKETPLACE FEED ─── -->
+<section id="live-marketplace" style="padding:80px 48px; background:linear-gradient(180deg, rgba(0,20,60,0.1), transparent);">
+  <div style="max-width:1400px; margin:0 auto;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:48px; flex-wrap:wrap; gap:20px;">
+      <div>
+        <span style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:#00D4FF; display:block; margin-bottom:10px;">// Live Feed</span>
+        <h2 style="font-family:'Manrope',sans-serif; font-size:clamp(24px,3vw,40px); font-weight:800; line-height:1.15;">Community Inventions</h2>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;" id="filterBtns">
+        <button onclick="filterFeed('all')" class="filter-btn active-filter" style="padding:8px 18px; font-family:'Inter',sans-serif; font-size:12px; border-radius:100px; border:1px solid rgba(0,212,255,0.4); background:rgba(0,212,255,0.1); color:#00D4FF; cursor:pointer;">All</button>
+        <button onclick="filterFeed('AI Robot')" class="filter-btn" style="padding:8px 18px; font-family:'Inter',sans-serif; font-size:12px; border-radius:100px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:rgba(255,255,255,0.5); cursor:pointer;">AI Robot</button>
+        <button onclick="filterFeed('AI Chip')" class="filter-btn" style="padding:8px 18px; font-family:'Inter',sans-serif; font-size:12px; border-radius:100px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:rgba(255,255,255,0.5); cursor:pointer;">AI Chip</button>
+        <button onclick="filterFeed('Robotics')" class="filter-btn" style="padding:8px 18px; font-family:'Inter',sans-serif; font-size:12px; border-radius:100px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:rgba(255,255,255,0.5); cursor:pointer;">Robotics</button>
+        <button onclick="filterFeed('Smart Device')" class="filter-btn" style="padding:8px 18px; font-family:'Inter',sans-serif; font-size:12px; border-radius:100px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:rgba(255,255,255,0.5); cursor:pointer;">Smart Device</button>
+      </div>
+    </div>
+    <div id="inventionFeed" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px;">
+      <!-- Cards injected by JS -->
+      <div id="emptyFeed" style="grid-column:1/-1; text-align:center; padding:80px 20px; color:rgba(255,255,255,0.25);">
+        <div style="font-size:48px; margin-bottom:16px;">🔬</div>
+        <p style="font-family:'Manrope',sans-serif; font-size:18px; font-weight:600; margin-bottom:8px;">No inventions yet</p>
+        <p style="font-family:'Inter',sans-serif; font-size:14px;">Be the first to upload your invention!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BUY SUCCESS TOAST ─── -->
+<div id="toast" style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; background:linear-gradient(135deg,#0066FF,#7B2FFF); border-radius:12px; padding:16px 24px; font-family:'Manrope',sans-serif; font-size:14px; font-weight:600; color:#fff; box-shadow:0 8px 40px rgba(0,100,255,0.4); animation:slideUp 0.3s ease;"></div>
+
+<script>
+  // ── INVENTION STORE ──
+  let inventions = JSON.parse(localStorage.getItem('airn_inventions') || '[]');
+  let currentFilter = 'all';
+
+  function saveInventions() {
+    localStorage.setItem('airn_inventions', JSON.stringify(inventions));
+  }
+
+  // ── OPEN UPLOAD MODAL ──
+  function openUploadModal() {
+    const user = getCurrentUser();
+    if (!user) {
+      document.getElementById('loginModal').style.display = 'flex';
+      showToast('⚠️ Please log in first to upload an invention');
+      return;
+    }
+    document.getElementById('uploadModal').style.display = 'flex';
+  }
+
+  // ── IMAGE PREVIEW ──
+  function previewImage(input) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const preview = document.getElementById('uploadPreview');
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        document.getElementById('uploadZoneContent').style.opacity = '0';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // ── SUBMIT INVENTION ──
+  function submitInvention() {
+    const user = getCurrentUser();
+    const title = document.getElementById('invTitle').value.trim();
+    const desc = document.getElementById('invDesc').value.trim();
+    const category = document.getElementById('invCategory').value;
+    const price = parseFloat(document.getElementById('invPrice').value);
+    const license = document.getElementById('invLicense').value;
+    const imgSrc = document.getElementById('uploadPreview').src;
+    const errEl = document.getElementById('uploadError');
+
+    if (!title) { showError('Please enter a title.'); return; }
+    if (!desc) { showError('Please add a description.'); return; }
+    if (!category) { showError('Please select a category.'); return; }
+    if (isNaN(price) || price < 0) { showError('Please enter a valid price.'); return; }
+
+    errEl.style.display = 'none';
+
+    const invention = {
+      id: Date.now(),
+      title, desc, category, price, license,
+      image: imgSrc && imgSrc !== window.location.href ? imgSrc : null,
+      author: user.name,
+      authorPic: user.picture || '',
+      authorEmail: user.email,
+      timestamp: new Date().toISOString(),
+      likes: 0,
+      likedBy: [],
+      sold: false
+    };
+
+    inventions.unshift(invention);
+    saveInventions();
+    renderFeed();
+
+    // Reset form
+    document.getElementById('uploadModal').style.display = 'none';
+    document.getElementById('invTitle').value = '';
+    document.getElementById('invDesc').value = '';
+    document.getElementById('invCategory').value = '';
+    document.getElementById('invPrice').value = '';
+    document.getElementById('uploadPreview').src = '';
+    document.getElementById('uploadPreview').style.display = 'none';
+    document.getElementById('uploadZoneContent').style.opacity = '1';
+
+    showToast('🚀 Invention published successfully!');
+
+    // Scroll to feed
+    document.getElementById('live-marketplace').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('uploadError');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  // ── RENDER FEED ──
+  function renderFeed() {
+    const feed = document.getElementById('inventionFeed');
+    const empty = document.getElementById('emptyFeed');
+    const filtered = currentFilter === 'all' ? inventions : inventions.filter(i => i.category === currentFilter);
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+      // Remove existing cards
+      feed.querySelectorAll('.inv-card').forEach(c => c.remove());
+      return;
+    }
+    empty.style.display = 'none';
+    feed.querySelectorAll('.inv-card').forEach(c => c.remove());
+
+    filtered.forEach((inv, idx) => {
+      const card = document.createElement('div');
+      card.className = 'inv-card';
+      card.style.cssText = 'background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; cursor:pointer; transition:all 0.3s ease; animation-delay:' + (idx * 0.05) + 's;';
+
+      const imgBg = inv.image
+        ? `<img src="${inv.image}" style="width:100%;height:100%;object-fit:cover;" />`
+        : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:52px;">${getCategoryEmoji(inv.category)}</div>`;
+
+      const user = getCurrentUser();
+      const liked = user && inv.likedBy && inv.likedBy.includes(user.email);
+      const isSold = inv.sold;
+
+      card.innerHTML = `
+        <div style="height:200px; background:linear-gradient(135deg,rgba(0,50,150,0.3),rgba(60,0,120,0.3)); position:relative; overflow:hidden;">
+          ${imgBg}
+          <div style="position:absolute;top:12px;left:12px;padding:4px 10px;background:rgba(0,0,0,0.6);border:1px solid rgba(0,212,255,0.3);border-radius:100px;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2px;color:#00D4FF;backdrop-filter:blur(4px);">${inv.category.toUpperCase()}</div>
+          ${isSold ? '<div style="position:absolute;top:12px;right:12px;padding:4px 10px;background:rgba(255,100,100,0.2);border:1px solid rgba(255,100,100,0.4);border-radius:100px;font-family:Inter,sans-serif;font-size:10px;color:#FF6B6B;">SOLD</div>' : ''}
+        </div>
+        <div style="padding:18px 18px 14px;">
+          <h3 style="font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${inv.title}</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;">${inv.desc}</p>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+            ${inv.authorPic ? `<img src="${inv.authorPic}" style="width:24px;height:24px;border-radius:50%;border:1px solid rgba(0,200,255,0.3);" />` : `<div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0066FF,#7B2FFF);display:flex;align-items:center;justify-content:center;font-size:10px;">${inv.author[0].toUpperCase()}</div>`}
+            <span style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);">${inv.author}</span>
+            <span style="margin-left:auto;font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.25);">${timeAgo(inv.timestamp)}</span>
+            ${user && inv.authorEmail === user.email ? `<button onclick="deleteInvention(${inv.id}, event)" title="Delete" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.25);border-radius:6px;color:rgba(255,100,100,0.7);font-size:12px;padding:3px 8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,60,60,0.25)';this.style.color='#FF6B6B'" onmouseout="this.style.background='rgba(255,60,60,0.1)';this.style.color='rgba(255,100,100,0.7)'">🗑</button>` : ''}
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;background:linear-gradient(90deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">$${Number(inv.price).toLocaleString()}</span>
+            <div style="display:flex;gap:8px;">
+              <button onclick="toggleLike(${inv.id}, event)" style="padding:7px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:${liked ? '#FF6B6B' : 'rgba(255,255,255,0.4)'};font-size:13px;cursor:pointer;transition:all 0.2s;" title="Like">${liked ? '❤️' : '🤍'} ${inv.likes || 0}</button>
+              <button onclick="openDetail(${inv.id})" style="padding:7px 16px;border-radius:8px;border:1px solid rgba(0,150,255,0.3);background:rgba(0,100,255,0.12);color:#4DA6FF;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;">View</button>
+              <button onclick="buyInvention(${inv.id}, event)" ${isSold ? 'disabled' : ''} style="padding:7px 16px;border-radius:8px;border:none;background:${isSold ? 'rgba(255,255,255,0.05)' : 'linear-gradient(135deg,#0066FF,#7B2FFF)'};color:${isSold ? 'rgba(255,255,255,0.3)' : '#fff'};font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:${isSold ? 'not-allowed' : 'pointer'};transition:all 0.2s;">${isSold ? 'Sold' : 'Buy'}</button>
+            </div>
+          </div>
+        </div>`;
+
+      feed.appendChild(card);
+    });
+  }
+
+  // ── FILTER ──
+  function filterFeed(cat) {
+    currentFilter = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
+    event.target.classList.add('active-filter');
+    renderFeed();
+  }
+
+  // ── LIKE ──
+  function toggleLike(id, e) {
+    e.stopPropagation();
+    const user = getCurrentUser();
+    if (!user) { showToast('⚠️ Please log in to like inventions'); return; }
+    const inv = inventions.find(i => i.id === id);
+    if (!inv) return;
+    if (!inv.likedBy) inv.likedBy = [];
+    if (inv.likedBy.includes(user.email)) {
+      inv.likedBy = inv.likedBy.filter(e => e !== user.email);
+      inv.likes = Math.max(0, (inv.likes || 1) - 1);
+    } else {
+      inv.likedBy.push(user.email);
+      inv.likes = (inv.likes || 0) + 1;
+    }
+    saveInventions();
+    renderFeed();
+  }
+
+  // ── BUY ──
+  function buyInvention(id, e) {
+    if (e) e.stopPropagation();
+    const user = getCurrentUser();
+    if (!user) { showToast('⚠️ Please log in to buy inventions'); return; }
+    const inv = inventions.find(i => i.id === id);
+    if (!inv || inv.sold) return;
+    if (inv.authorEmail === user.email) { showToast('⚠️ You cannot buy your own invention'); return; }
+
+    // Simulate purchase confirmation
+    if (confirm(`Purchase "${inv.title}" for $${Number(inv.price).toLocaleString()}?\n\nThis will connect you with the seller. In a real deployment, this would process payment via Stripe or PayPal.`)) {
+      inv.sold = true;
+      saveInventions();
+      renderFeed();
+      showToast(`✅ Purchase initiated! Seller (${inv.author}) will be notified.`);
+    }
+  }
+
+  // ── DETAIL VIEW ──
+  function openDetail(id) {
+    const inv = inventions.find(i => i.id === id);
+    if (!inv) return;
+    const user = getCurrentUser();
+    const liked = user && inv.likedBy && inv.likedBy.includes(user.email);
+
+    document.getElementById('detailContent').innerHTML = `
+      <div style="${inv.image ? '' : 'background:linear-gradient(135deg,rgba(0,50,150,0.4),rgba(60,0,120,0.4));'} height:280px; display:flex; align-items:center; justify-content:center; border-radius:24px 24px 0 0; overflow:hidden;">
+        ${inv.image ? `<img src="${inv.image}" style="width:100%;height:100%;object-fit:cover;"/>` : `<div style="font-size:80px;">${getCategoryEmoji(inv.category)}</div>`}
+      </div>
+      <div style="padding:28px 32px 32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <span style="padding:4px 12px;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:100px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:2px;color:#00D4FF;">${inv.category.toUpperCase()}</span>
+          <span style="padding:4px 12px;background:rgba(123,47,255,0.1);border:1px solid rgba(123,47,255,0.3);border-radius:100px;font-family:'Inter',sans-serif;font-size:11px;color:#B57BFF;">${inv.license}</span>
+          ${inv.sold ? '<span style="padding:4px 12px;background:rgba(255,100,100,0.1);border:1px solid rgba(255,100,100,0.3);border-radius:100px;font-family:Inter,sans-serif;font-size:11px;color:#FF6B6B;">SOLD</span>' : ''}
+        </div>
+        <h2 style="font-family:'Manrope',sans-serif;font-size:24px;font-weight:800;margin-bottom:12px;line-height:1.25;">${inv.title}</h2>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:24px;">${inv.desc}</p>
+        <div style="display:flex;align-items:center;gap:10px;padding:16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.07);margin-bottom:24px;">
+          ${inv.authorPic ? `<img src="${inv.authorPic}" style="width:40px;height:40px;border-radius:50%;border:2px solid rgba(0,200,255,0.3);" />` : `<div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0066FF,#7B2FFF);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;">${inv.author[0].toUpperCase()}</div>`}
+          <div>
+            <div style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;">${inv.author}</div>
+            <div style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.35);">Posted ${timeAgo(inv.timestamp)}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:4px;">PRICE</div>
+            <div style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:900;background:linear-gradient(90deg,#4DA6FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">$${Number(inv.price).toLocaleString()}</div>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <button onclick="toggleLike(${inv.id}, event)" style="padding:12px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:${liked ? '#FF6B6B' : 'rgba(255,255,255,0.5)'};font-size:16px;cursor:pointer;">${liked ? '❤️' : '🤍'} ${inv.likes || 0}</button>
+            <button onclick="buyInvention(${inv.id}); document.getElementById('detailModal').style.display='none';" ${inv.sold ? 'disabled' : ''} style="padding:12px 32px;border-radius:10px;border:none;background:${inv.sold ? 'rgba(255,255,255,0.05)' : 'linear-gradient(135deg,#0066FF,#7B2FFF)'};color:${inv.sold ? 'rgba(255,255,255,0.3)' : '#fff'};font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;cursor:${inv.sold ? 'not-allowed' : 'pointer'};">${inv.sold ? 'Sold Out' : '🛒 Buy Now'}</button>
+          </div>
+        </div>
+      </div>`;
+
+    document.getElementById('detailModal').style.display = 'flex';
+  }
+
+  // ── HELPERS ──
+  function getCategoryEmoji(cat) {
+    const map = { 'AI Robot':'🤖', 'AI Chip':'💾', 'Robotics':'⚙️', 'Smart Device':'📱', 'Tech Invention':'🔬', 'Software':'💻' };
+    return map[cat] || '🔧';
+  }
+
+  function timeAgo(iso) {
+    const diff = (Date.now() - new Date(iso)) / 1000;
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+    return Math.floor(diff/86400) + 'd ago';
+  }
+
+  // ── DELETE INVENTION ──
+  function deleteInvention(id, e) {
+    if (e) e.stopPropagation();
+    const user = getCurrentUser();
+    if (!user) { showToast('⚠️ Please log in to delete'); return; }
+    const inv = inventions.find(i => i.id === id);
+    if (!inv) return;
+    if (inv.authorEmail !== user.email) { showToast('⚠️ You can only delete your own inventions'); return; }
+    if (!confirm(`Delete "${inv.title}"?\n\nThis cannot be undone.`)) return;
+    inventions = inventions.filter(i => i.id !== id);
+    saveInventions();
+    renderFeed();
+    renderMktGrid();
+    document.getElementById('detailModal').style.display = 'none';
+    showToast('🗑️ Invention deleted successfully');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 3500);
+  }
+
+  function getCurrentUser() {
+    const saved = sessionStorage.getItem('airn_user');
+    return saved ? JSON.parse(saved) : null;
+  }
+
+  // Close modals on backdrop click
+  document.getElementById('uploadModal').addEventListener('click', function(e) { if (e.target===this) this.style.display='none'; });
+  document.getElementById('detailModal').addEventListener('click', function(e) { if (e.target===this) this.style.display='none'; });
+
+  // Initial render
+  renderFeed();
+
+  // Also wire up "Upload Your Invention" in creator section
+  document.querySelectorAll('[href="#creator"]').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      openUploadModal();
+    });
+  });
+</script>
+<!-- 3D Background Canvas behind Hero Badge -->
+<script>
+(function(){
+  const canvas = document.getElementById('bg3d');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = 500;
+  canvas.height = 220;
+
+  // 3D points
+  const pts = [];
+  for (let i = 0; i < 55; i++) {
+    pts.push({
+      x: Math.random() * 500,
+      y: Math.random() * 220,
+      z: Math.random() * 300,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.3,
+      vz: (Math.random() - 0.5) * 0.5,
+      hue: Math.random() > 0.5 ? 200 : 270 // cyan or purple
+    });
+  }
+
+  function project(x, y, z) {
+    const fov = 250;
+    const scale = fov / (fov + z);
+    return {
+      sx: x * scale + (500 - 500 * scale) / 2,
+      sy: y * scale + (220 - 220 * scale) / 2,
+      scale
+    };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, 500, 220);
+
+    // Update positions
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.z += p.vz;
+      if (p.x < 0 || p.x > 500) p.vx *= -1;
+      if (p.y < 0 || p.y > 220) p.vy *= -1;
+      if (p.z < 0 || p.z > 300) p.vz *= -1;
+    });
+
+    // Sort by z (back to front)
+    const sorted = [...pts].sort((a, b) => b.z - a.z);
+
+    // Draw connections
+    sorted.forEach((a, i) => {
+      const pa = project(a.x, a.y, a.z);
+      sorted.slice(i + 1).forEach(b => {
+        const dx = a.x - b.x, dy = a.y - b.y, dz = a.z - b.z;
+        const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+        if (dist < 120) {
+          const pb = project(b.x, b.y, b.z);
+          const alpha = (1 - dist / 120) * 0.25;
+          ctx.beginPath();
+          ctx.moveTo(pa.sx, pa.sy);
+          ctx.lineTo(pb.sx, pb.sy);
+          ctx.strokeStyle = a.hue === 200
+            ? `rgba(0,212,255,${alpha})`
+            : `rgba(123,47,255,${alpha})`;
+          ctx.lineWidth = pa.scale * 0.8;
+          ctx.stroke();
+        }
+      });
+    });
+
+    // Draw points
+    sorted.forEach(p => {
+      const { sx, sy, scale } = project(p.x, p.y, p.z);
+      const r = scale * 3.5;
+      const alpha = 0.4 + scale * 0.5;
+
+      // Outer glow
+      const grd = ctx.createRadialGradient(sx, sy, 0, sx, sy, r * 3);
+      grd.addColorStop(0, p.hue === 200 ? `rgba(0,212,255,${alpha * 0.4})` : `rgba(180,123,255,${alpha * 0.4})`);
+      grd.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.beginPath();
+      ctx.arc(sx, sy, r * 3, 0, Math.PI * 2);
+      ctx.fillStyle = grd;
+      ctx.fill();
+
+      // Core dot
+      ctx.beginPath();
+      ctx.arc(sx, sy, r, 0, Math.PI * 2);
+      ctx.fillStyle = p.hue === 200
+        ? `rgba(0,212,255,${alpha})`
+        : `rgba(180,123,255,${alpha})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+</script>
+
+<!-- Chat Button -->
+<button id="chatBtn" onclick="toggleChat()" title="Chat with AIRN AI">
+  <div class="pulse"></div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+  </svg>
+</button>
+
+<!-- Chat Window -->
+<div id="chatWindow">
+  <div id="chatHeader">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-info">
+      <h4>AIRN Assistant</h4>
+      <span>● Online · AI-powered</span>
+    </div>
+    <button id="chatClose" onclick="toggleChat()">✕</button>
+  </div>
+
+  <div id="chatMessages"></div>
+
+  <div id="chatInputArea">
+    <textarea id="chatInput" placeholder="Ask me anything about AIRN..." rows="1"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}"></textarea>
+    <button id="chatSend" onclick="sendChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  // ── CHATBOT ──
+  let chatOpen = false;
+  let chatHistory = [];
+  let isTyping = false;
+
+  const AIRN_SYSTEM = `You are AIRN Assistant, the helpful AI for AIRN — the world's first marketplace for AI robots, AI chips, robotics components, smart devices, and tech inventions. 
+
+You help users with:
+- Understanding what AIRN is and how it works
+- How to upload, sell, and buy inventions on the marketplace
+- Information about stipends, grants, and rewards ($500/mo stipend, up to $25K breakthrough grant, 20% sales bonus)
+- How to create an account and get started
+- Navigating the platform (Marketplace, Build/Upload, Community tabs)
+- Answering questions about robotics and AI technology
+- Encouraging innovation and helping inventors succeed
+
+Keep responses friendly, concise, and helpful. Use emojis occasionally to be engaging. If asked something outside AIRN's scope, gently redirect to AIRN topics.`;
+
+  const quickReplies = [
+    "How do I upload an invention?",
+    "What rewards do creators get?",
+    "How do I buy an invention?",
+    "What is AIRN?"
+  ];
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    const win = document.getElementById('chatWindow');
+    win.style.display = chatOpen ? 'flex' : 'none';
+    if (chatOpen && chatHistory.length === 0) {
+      setTimeout(() => {
+        addBotMessage("👋 Hey there! I'm the AIRN Assistant. I can help you explore the marketplace, upload your inventions, learn about creator rewards, and more!\n\nWhat would you like to know?", true);
+      }, 300);
+    }
+    if (chatOpen) {
+      setTimeout(() => document.getElementById('chatInput').focus(), 400);
+    }
+  }
+
+  function addBotMessage(text, withQuickReplies = false) {
+    const msgs = document.getElementById('chatMessages');
+
+    // Remove typing indicator if present
+    const typing = document.getElementById('typingIndicator');
+    if (typing) typing.remove();
+
+    const msg = document.createElement('div');
+    msg.className = 'msg bot';
+    msg.innerHTML = `
+      <div class="msg-pic">🤖</div>
+      <div>
+        <div class="msg-bubble">${text.replace(/\n/g, '<br>')}</div>
+        ${withQuickReplies ? `<div class="quick-replies">${quickReplies.map(q => `<button class="quick-reply" onclick="sendQuick('${q}')">${q}</button>`).join('')}</div>` : ''}
+      </div>`;
+    msgs.appendChild(msg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function addUserMessage(text) {
+    const msgs = document.getElementById('chatMessages');
+    const user = getCurrentUser ? getCurrentUser() : null;
+    const msg = document.createElement('div');
+    msg.className = 'msg user';
+    msg.innerHTML = `
+      <div class="msg-bubble">${text}</div>
+      <div class="msg-pic" style="background:${user?.picture ? 'none' : 'linear-gradient(135deg,#0066FF,#7B2FFF)'};">
+        ${user?.picture ? `<img src="${user.picture}" style="width:26px;height:26px;border-radius:50%;object-fit:cover;">` : (user?.name?.[0]?.toUpperCase() || '👤')}
+      </div>`;
+    msgs.appendChild(msg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function showTyping() {
+    const msgs = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = 'msg bot'; div.id = 'typingIndicator';
+    div.innerHTML = `<div class="msg-pic">🤖</div><div class="msg-bubble" style="padding:10px 14px;"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  async function sendChat() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text || isTyping) return;
+    input.value = '';
+    input.style.height = 'auto';
+
+    addUserMessage(text);
+    chatHistory.push({ role: 'user', content: text });
+    isTyping = true;
+    showTyping();
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: AIRN_SYSTEM,
+          messages: chatHistory
+        })
+      });
+
+      const data = await response.json();
+      const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again!";
+      chatHistory.push({ role: 'assistant', content: reply });
+      addBotMessage(reply);
+    } catch (err) {
+      addBotMessage("⚠️ I'm having trouble connecting right now. Please try again in a moment!");
+    }
+    isTyping = false;
+  }
+
+  function sendQuick(text) {
+    document.getElementById('chatInput').value = text;
+    sendChat();
+  }
+
+  // Auto-resize textarea
+  document.getElementById('chatInput').addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 80) + 'px';
+  });
+</script>
+<script src="main2.js"></script>
+</body>
+</html>
